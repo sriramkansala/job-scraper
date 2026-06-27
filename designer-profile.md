@@ -1,46 +1,60 @@
-# Designer Application Profile — Sriram
+# Designer Application Profile — Damotharan Sriram
 
-> This is your reusable "apply on my behalf" repo. Fill in the blanks (or send me your resume and I'll populate it). I'll use this to pre-fill applications. Anything marked TODO is missing.
+> Auto-populated from resume (Damotharan_Sriram-Resume.pdf). Used to pre-fill applications. Fields marked **NEED** are still missing.
 
 ## Basics
-- Full name: Sriram Kansala (confirm)
-- Email: sriram.kansala@gmail.com (confirm — alerts + applications)
-- Phone: TODO
-- Location / base: India (TODO: city)
-- Work authorization: TODO (e.g., India citizen, needs sponsorship for X)
-- Open to: Remote (India + Worldwide), Junior–Mid Product Design roles
-
-## Links
-- Portfolio URL: TODO
-- LinkedIn: TODO
-- Dribbble / Behance: TODO
-- Personal site / GitHub: TODO
-- Resume file: TODO (drop a PDF in ./attachments and I'll attach it)
+- Full name: Damotharan Sriram
+- Email: sriram.kansala@gmail.com
+- Phone: +91-9781698929
+- Location: Karnataka, India (**NEED** exact city)
+- Portfolio: https://sriramkansala.framer.ai/
+- LinkedIn: **NEED**
+- Work authorization: India citizen (assumed — confirm)
+- Open to: Remote (India + Worldwide), Product Design
 
 ## Headline / Pitch
-- One-line headline: TODO (e.g., "Product designer focused on clean, usable B2B SaaS interfaces")
-- Short bio (2-3 sentences): TODO
+Senior Product Designer | Design Systems, Fintech & Enterprise SaaS
+
+**Summary:** Senior Product Designer with 5+ years of experience designing fintech, enterprise SaaS, and consumer products. Specializes in design systems, complex workflow simplification, and turning data-heavy interfaces into guided, accessible user experiences. Proven track record building scalable token architectures (WCAG AA), shipping zero-to-one features, and partnering closely with engineering to deliver measurable business outcomes.
 
 ## Experience
-- Years of experience: TODO
-- Current/most recent role: TODO (title, company, dates)
-- Previous roles: TODO
+**TuringLabs** — Senior Product Designer (Feb 2023 – Present), Karnataka, India
+- Redesigned core DCF (Discounted Cash Flow) flow into a guided experience for private equity workflows
+- Designed the Equity Simulation feature for scenario stress-testing before investment decisions
+- Rebuilt design token architecture: 157 component tokens → 63 semantic tokens, 73% payload cut (137KB → 37KB), theming time 2–3 days → under 1 hour
+- Designed a three-tier semantic token model with WCAG AA compliance built into the architecture
+
+**Larsen & Toubro Infotech (LTIMindtree)** — UX / Product Designer (Aug 2021 – Dec 2022), Karnataka, India
+- Redesigned enterprise analytics dashboards & internal tools for manufacturing/infrastructure clients
+- Rebuilt data-heavy reporting interfaces to surface critical info faster
+- Standardized UI patterns across modules, authored shared component specifications
+
+**Camberry Studio** — Motion Designer (Aug 2019 – Jul 2020), Karnataka, India
+- Motion design & animation for ed-tech, real estate, consumer product clients
+- Produced explainer videos and UI animations; established style guides & motion principles
+
+**Artos – Personal Finance App** (Independent) — Product Designer (2019 – Present), Karnataka, India
+- Partnered with a developer to ship a consumer personal finance product; led end-to-end design
+- Shipped full app redesign, ELI5 financial explainers, core user flows
+- Diagnosed 30% retention drop post-redesign; iterating on fixes via research + analytics
 
 ## Skills & Tools
-- Core: TODO (e.g., UX, UI, interaction design, prototyping, design systems)
-- Tools: TODO (e.g., Figma, FigJam, Framer, Protopie)
-- Domains: TODO (e.g., fintech, consumer apps, SaaS)
+- **Product Design:** UX, UI, Interaction Design, IA, Wireframing, Prototyping, User Research, Usability Testing, Accessibility (WCAG AA), Responsive Design
+- **Design Systems:** Component Libraries, Design Tokens, Semantic Token Architecture, Theming, Style Guides, Pattern Libraries, Cross-Platform Consistency
+- **Domains:** Fintech, Private Equity Workflows, Financial Modeling (DCF, Equity Simulation), Enterprise SaaS, Analytics Dashboards, Consumer Mobile Apps
+- **Tools:** Figma, Framer, ProtoPie, Sketch, InVision, Zeplin, Adobe CS (Photoshop, Illustrator, After Effects), Rive
+- **Other:** Motion Design, Animation, Stakeholder Communication, Cross-Functional Collaboration, Agile/Scrum
 
 ## Education
-- Degree / school / year: TODO
+- **Lovely Professional University**, Punjab, India — B.Tech, Mechanical Engineering (Honors), 2014 – 2018
+- **Sri Chaitanya Junior College**, Andhra Pradesh, India — Higher Secondary (Math, Physics, Chemistry), 2012 – 2014
 
-## Application defaults (common form questions)
-- Desired salary / rate: TODO
-- Earliest start date / notice period: TODO
-- Why interested (reusable paragraph): TODO
-- Willing to relocate: TODO
-- Pronouns (optional): TODO
+## Languages
+Telugu (Native), Tamil, Hindi, English
 
-## Standard answers
-- "Tell us about yourself" (short): TODO
-- "Why this role/company" (template I'll customize per job): TODO
+## Application defaults (common form questions) — NEED
+- Desired salary / rate: **NEED**
+- Notice period / earliest start: **NEED**
+- Willing to relocate: **NEED**
+- LinkedIn URL: **NEED**
+- Exact city: **NEED**
