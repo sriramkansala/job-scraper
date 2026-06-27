@@ -1,5 +1,5 @@
 # Job Portals Master List
-_74 catalogued sources. Generated 2026-06-27._
+_88 catalogued sources. Generated 2026-06-27._
 
 Catalogued from a 200+ site sweep, deduped and tagged with how the scraper reaches each one (mapped to its fallback tier).
 
@@ -150,4 +150,24 @@ Catalogued from a 200+ site sweep, deduped and tagged with how the scraper reach
 | Web3 Career | web3.career | Global | Free browse | api | 0 | Crypto roles; has API/feed; pay-in-crypto filter. |
 | CryptocurrencyJobs.co | cryptocurrencyjobs.co | Global | Free browse | rss | 0 | Blockchain jobs; RSS/newsletter. |
 | BlueSteps | bluesteps.com | Global | Membership | login | 4 | C-suite/fractional exec network. |
+
+
+## Additional sources — Diversity, India & niche (added)
+
+| Site | URL | Scope | Pricing | Access | Tier | Notes |
+|---|---|---|---|---|---|---|
+| PowerToFly | powertofly.com | US/Global | Free seeker | js | 2 | Women in tech/leadership; events + jobs; internal apply. |
+| RemoteWoman | remotewoman.com | Global | Free | html | 1-2 | Remote roles curated for women; redirects to employer. |
+| The Mom Project | themomproject.com | US | Free seeker | login | 4 | Working parents; in-site apply, account needed. |
+| Diversify Tech | diversifytech.com/jobs | Global | Free | html | 1-2 | Tech roles for underrepresented groups. |
+| Hired (ex-Vettery) | hired.com | US/Global | Employer pays | login | 4 | Reverse-marketplace; companies apply to you; account needed. |
+| SurelyRemote | surelyremote.com | India | Seeker paid ~Rs899/yr | html | 1-2 | India-only remote board; direct applications. Relevant to you. |
+| Authentic Jobs | authenticjobs.com | Global | Free/paid | rss | 0 | Design+dev board (Dribbble-linked); has feed. |
+| Remoters | remoters.net/jobs | Global | Free | html | 1-2 | Remote jobs + remote-work resources; tech/design mix. |
+| Mediabistro | mediabistro.com | Global | Employer ~$29/post | html | 1-2 | Media/writing jobs; redirect. |
+| Contena | contena.co | Global | Seeker membership | login | 4 | Writing/editing; subscription-gated. |
+| FlexProfessionals | flexprofessionals.com | US/Global | Seeker ~$9/mo | html | 1-2 | Finance/accounting flexible roles. |
+| Remote Jobs Asia | remotejobsasia.com | Asia | Free seeker | html | 1-2 | Asia-focused remote roles. |
+| HealthcareJobsite | healthcarejobsite.com | US | Employer pays | html | 1-2 | Healthcare jobs; remote filter. |
+| RemoteMedicine | remotemedicine.org | Global | Free/$10 post | html | 1-2 | Telemedicine niche. |
 

@@ -12,7 +12,8 @@ A self-contained, multi-engine job scraper with automatic fallback. Runs anywher
 | `job-scraper-sources.md` | Every scrapable endpoint + tips. |
 | `remote-product-designer-jobs.md` | Human-readable job tracker. |
 | `designer-profile.md` | Your "apply on my behalf" profile (fill in the TODOs). |
-| `job-portals.md` / `job-portals.csv` | Master list of 74 job portals, tagged by scrape access + fallback tier. |
+| `job-portals.md` / `job-portals.csv` | Master list of 88 job portals, tagged by scrape access + fallback tier. |
+| `auto-apply-tools.md` / `auto-apply-tools.csv` | Catalog of GitHub auto-apply / form-fill tools, with a safety note. |
 | `.github/workflows/daily.yml` | Cloud cron — runs the scraper daily and emails you. |
 
 ## Quick start
