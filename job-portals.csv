@@ -1,0 +1,75 @@
+name,url,category,scope,pricing,access,scrape_tier,notes
+RemoteOK,remoteok.com/api,Core API (wired),Global,Free,api,0,"WIRED - JSON API, tag filter."
+Jobicy,jobicy.com/api/v2/remote-jobs,Core API (wired),Global,Free,api,0,"WIRED - JSON API, tag=design."
+Arbeitnow,arbeitnow.com/api/job-board-api,Core API (wired),Global,Free,api,0,WIRED - JSON API.
+Himalayas,himalayas.app/jobs/api,Core API (wired),Global,Free,api,0,"WIRED - JSON API, paginate by offset."
+LinkedIn (guest),linkedin.com/jobs-guest/jobs/api,Core API (wired),Global,Free,html,1-2,"WIRED - guest HTML cards, no login."
+Jobspresso,jobspresso.co,Core API (wired),Global,Free,rss,0,WordPress job_feed RSS.
+WeWorkRemotely,weworkremotely.com,General,Global,Employer ~$299/post,rss,0,Has category RSS feeds (already wired). Largest remote board.
+Remote.co,remote.co,General,Global,Free seeker; employer sub,rss,0,100k+ jobs; design RSS feed available.
+FlexJobs,flexjobs.com,General,Global,Seeker sub $149/yr,login,4,"Screened jobs; paywalled, needs account."
+Remotive,remotive.com,General/Tech,Global,Free; premium $49/yr,api,0,JSON API by category (already wired).
+Working Nomads,workingnomads.co,General,Global,Free; Pro $100/yr,api,0,exposed_jobs JSON API (already wired).
+Virtual Vocations,virtualvocations.com,General,Global (US),Sub ~$15/mo,login,4,Subscription-gated listings.
+JustRemote,justremote.co,General,Global,Employer $189/30d,html,1-2,Static-ish HTML listings.
+SkipTheDrive,skipthedrive.com,General,Global,Free; employer $99,rss,0,WordPress job board; likely job_feed RSS.
+Hubstaff Talent,talent.hubstaff.com,Freelance/General,Global,Free,html,1-2,Free directory; no commissions.
+Search Remotely,searchremotely.com,General,Global,Employer pays,html,1-2,AI recommendations; HTML.
+Arc,arc.dev,Tech,Global (US/EU),Free seeker,js,2,Vetted senior devs/designers; JS app.
+Wellfound (AngelList),wellfound.com,Tech/Startups,Global,Free seeker,antibot,3,Startup jobs; heavy anti-bot + login for apply.
+Toptal,toptal.com,Freelance (high-end),Global,Company pays,login,4,Vetted top 3% talent; gated.
+Tech Ladies,hiretechladies.com,Tech (women),Global,Employer $499+/mo,html,1-2,Community board.
+Dice,dice.com,Tech,US (global listings),Free browse,js,2,Established tech board; remote filter.
+Behance Jobs,behance.net/joblist,Design,Global,Free (Adobe),js,2,Adobe/Behance creative roles; JS app.
+Dribbble Jobs,dribbble.com/jobs,Design,Global,Employer $350-800/job,html,1-2,Creative community; remote search.
+99designs,99designs.com,Design (contests),Global,Contest from $99,js,2,Project/contest marketplace.
+Crowdspring,crowdspring.com,Design (contests),Global,Per contest,js,2,Crowdsourced creative projects.
+Smashing Magazine Jobs,jobs.smashingmagazine.com,Design/Dev,Global,Employer $199/post,html,1-2,Designer/dev board.
+ProBlogger Jobs,problogger.com/jobs,Writing,Global,Free posting,html,1-2,Blogging/editing gigs.
+FreelanceWriting.com,freelancewriting.com,Writing,Global,Free,html,1-2,Aggregated writing jobs.
+AllFreelanceWriting,allfreelancewriting.com,Writing,Global,Free,html,1-2,Daily writing job list; no login.
+JournalismJobs,journalismjobs.com,Media/Journalism,US/Global,Free browse,html,1-2,Journalism careers.
+MarketerHire,marketerhire.com,Marketing,Global,Free talent; buyer fee,login,4,Vetted freelance marketers; matching.
+Mayple,mayple.com,Marketing,Global,Free talent,js,2,AI matching marketing freelancers.
+GrowthHackers Jobs,growthhackers.com/jobs,Marketing/Growth,Global,Employer pays,html,1-2,Growth roles board.
+AMA Career Center,careers.ama.org,Marketing,US/Global,Employer per post,html,1-2,American Marketing Assoc board.
+Remote Jobs Club,remotejobs.club,Marketing,Global,Free,html,1-2,Curated newsletter-style board.
+YC Work at a Startup,workatastartup.com,Startups,Global (YC),Free,login,4,YC companies; login GraphQL.
+Startup Jobs,startup.jobs,Startups,Global,Employer $279/post,html,1-2,Early-stage startups.
+Idealist,idealist.org,Non-profit,Global,Employer from $75,html,1-2,Largest NGO/mission board.
+Work for Good,workforgood.org,Non-profit,US/Global,Employer pays,html,1-2,Purpose-driven jobs.
+The Impact Job,theimpactjob.com,Social impact,Global,Free seeker,html,1-2,Handpicked impact jobs.
+Devex,devex.com/jobs,Global development,Global,Freemium,login,4,Aid/development sector.
+CharityVillage,charityvillage.com,Non-profit (Canada),Canada,Employer pays,html,1-2,Canadian nonprofit board.
+USAJOBS,usajobs.gov,Government,USA,Free (gov),api,0,Official US gov API (data.usajobs.gov); telework filter.
+GovernmentJobs.com,governmentjobs.com,Government,USA,Employer pays,html,1-2,State/local gov portal; telework filter.
+UK Civil Service Jobs,civilservicejobs.service.gov.uk,Government,UK,Free,html,1-2,UK gov roles; some remote.
+EU Careers (EPSO),eu-careers.europa.eu,Government,Europe,Free,html,1-2,EU institutions; mostly onsite.
+HigherEdJobs,higheredjobs.com,Education,US/Global,Free browse,html,1-2,Higher-ed; online/remote filter.
+EdSurge Career Center,jobs.edsurge.com,EdTech,US/Global,Employer pays,html,1-2,Education startups.
+TeachAway,teachaway.com,Online teaching,Global,Free browse,html,1-2,Online/abroad teaching jobs.
+Academic Keys,academickeys.com,Academic,Global,Employer pays,html,1-2,University jobs aggregator.
+Remote Nurse Connection,remotenurseconnection.com,Healthcare/Nursing,USA,Membership,html,1-2,RN telehealth board + coaching.
+The Remote Nurse,remotemedicaljobs.com,Healthcare/Nursing,US/Global,Free browse,html,1-2,Telehealth/remote nursing.
+Health eCareers,healthecareers.com,Healthcare,US,Free search,html,1-2,Medical board; remote filter.
+Axiom,axiomlaw.com,Legal,Global,Company pays,login,4,On-demand legal talent; all remote.
+LawJobs,lawjobs.com,Legal,USA,Employer pays,html,1-2,ABA legal listings.
+eFinancialCareers,efinancialcareers.com,Finance,Global,Employer pays,js,2,Finance/banking; remote filter.
+AccountingFly,accountingfly.com,Accounting,USA,Employer pays,html,1-2,Accounting/CPA (mostly US).
+EU Remote Jobs,euremotejobs.com,Regional (EU),Europe,Employer ~$329,html,1-2,Europe TZ remote; timezone filter.
+LATAM Jobs,latam.jobs,Regional (LATAM),Latin America,Free seeker,html,1-2,LATAM talent to remote jobs.
+Remote Africa,remoteafrica.io,Regional (Africa),Africa,Employer ~$199/job,html,1-2,African professionals.
+NoDesk,nodesk.co,Aggregator,Global,Free,html,1-2,Curated remote jobs + company rankings.
+Remote Australia,remoteaustralia.com,Regional (AU),Australia,Free seeker,html,1-2,Aussie remote roles.
+Upwork,upwork.com,Freelance,Global,5-20% commission,login,4,Largest freelance marketplace.
+Freelancer.com,freelancer.com,Freelance,Global,Contest/project fees,login,4,Crowdsourcing + contests.
+Fiverr,fiverr.com,Freelance (gigs),Global,20% fee,login,4,Microjobs marketplace.
+PeoplePerHour,peopleperhour.com,Freelance,Global,20% commission,login,4,Small projects; escrow.
+Guru,guru.com,Freelance,Global,Free basic; tiers,login,4,Milestone pay; reviews.
+Workana,workana.com,Freelance,LATAM/Europe,Free; service fees,login,4,Bilingual; regional focus.
+Catalant,gocatalant.com,Consulting,Global,By project,login,4,Consultants to enterprise projects.
+Web3 Career,web3.career,Crypto/Web3,Global,Free browse,api,0,Crypto roles; has API/feed; pay-in-crypto filter.
+CryptocurrencyJobs.co,cryptocurrencyjobs.co,Crypto/Web3,Global,Free browse,rss,0,Blockchain jobs; RSS/newsletter.
+EthicalJobs,ethicaljobs.com.au,Social impact (AU),Australia,Employer pays,html,1-2,Values-aligned AU jobs.
+Consultants for Good,consultantsforgood.org,Non-profit consulting,USA,Free directory,html,1-2,Skilled-volunteer network.
+BlueSteps,bluesteps.com,Executive,Global,Membership,login,4,C-suite/fractional exec network.
