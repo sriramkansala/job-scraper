@@ -6,11 +6,11 @@
 - Full name: Damotharan Sriram
 - Email: sriram.kansala@gmail.com
 - Phone: +91-9781698929
-- Location: Karnataka, India (**NEED** exact city)
+- Location: Bangalore, Karnataka, India
 - Portfolio: https://sriramkansala.framer.ai/
-- LinkedIn: **NEED**
+- LinkedIn: https://www.linkedin.com/in/sriram-kansala-330203113/
 - Work authorization: India citizen (assumed — confirm)
-- Open to: Remote (India + Worldwide), Product Design
+- Open to: Remote, Bangalore-based, or international/relocation · Product Design (Mid–Senior)
 
 ## Headline / Pitch
 Senior Product Designer | Design Systems, Fintech & Enterprise SaaS
@@ -52,9 +52,9 @@ Senior Product Designer | Design Systems, Fintech & Enterprise SaaS
 ## Languages
 Telugu (Native), Tamil, Hindi, English
 
-## Application defaults (common form questions) — NEED
-- Desired salary / rate: **NEED**
-- Notice period / earliest start: **NEED**
-- Willing to relocate: **NEED**
-- LinkedIn URL: **NEED**
-- Exact city: **NEED**
+## Application defaults (common form questions)
+- Desired salary: INR 30 LPA (flexible ~21–39 LPA / ±30%)
+- Notice period: 30 days
+- Earliest start: ~30 days from offer
+- Willing to relocate: Yes — Bangalore, remote, or international/foreign roles
+- Target level: Mid to Senior
