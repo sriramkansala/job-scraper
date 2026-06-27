@@ -1,0 +1,11 @@
+httpx>=0.27
+feedparser>=6.0
+# Optional higher-tier engines (install only what you wire up):
+# scrapling
+# crawl4ai
+# patchright
+# camoufox
+# browser-use
+# agentql
+# scrapy
+# crawlee

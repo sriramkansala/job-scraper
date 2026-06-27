@@ -1,0 +1,39 @@
+name: Daily job scrape + email digest
+
+on:
+  schedule:
+    - cron: "30 3 * * *"   # 03:30 UTC = 09:00 IST
+  workflow_dispatch: {}      # allow manual runs from the Actions tab
+
+permissions:
+  contents: write            # to commit updated jobs.json / dashboard
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install deps
+        run: pip install -r requirements.txt
+
+      - name: Run scraper + email digest
+        env:
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+          DIGEST_TO: ${{ secrets.DIGEST_TO }}
+        run: python orchestrator.py
+
+      - name: Commit refreshed data
+        run: |
+          git config user.name "job-scraper-bot"
+          git config user.email "actions@github.com"
+          git add jobs.json job-dashboard.html portal_cache.json || true
+          git commit -m "chore: daily refresh $(date -u +%F)" || echo "nothing to commit"
+          git push || echo "nothing to push"
