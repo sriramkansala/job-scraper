@@ -4,3 +4,5 @@ portal_cache.json
 .env
 profile.json
 resume.pdf
+.claude/
+.DS_Store

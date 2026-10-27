@@ -1,0 +1,109 @@
+# Instructions for Claude
+
+This repo runs Sriram's job search as a product designer. Read `README.md` for the overview. This file covers what to do when asked to work on it.
+
+## Requests and what to do
+
+| Request | Do this |
+|---|---|
+| "Run the job search", "refresh the target companies", "find companies to apply to" | The full workflow below |
+| "Update my profile" or "rebuild the ICP" | Steps 1–2 only, then update the Profile & ICP doc in Linear |
+| Any other go-to-market request (outreach, positioning, research) | Pick the best skill from `gtm-skills/INDEX.md`, read its `SKILL.md` and follow it. Say which skill you picked. Ignore `swan.md` files. |
+
+## The workflow
+
+### 1. Profile
+
+Read `profile/01-profile-and-icp.md`.
+
+- **Missing or older than 3 months:** interview the user, at most 3 questions per message. Use their resume, a LinkedIn PDF export or their portfolio when they share one.
+- **Facts disagree between sources:** list every conflict, and record where each fact came from.
+
+### 2. ICP
+
+Use the six gates in the profile file, in order:
+
+1. Structural fit
+2. Problem evidence
+3. Exclusions
+4. Reachability
+5. Pay
+6. Timing
+
+Failing any gate excludes the company, and a strong result on one gate never rescues a failed one. The method is `gtm-skills/skills/tanyo-gochev/icp-matrix-builder/SKILL.md`.
+
+### 3. Search
+
+- **Split by segment:** Dev tools & AI, Fintech, B2B SaaS, Design tools. Run the segments in parallel when you can start subagents.
+- **Sources:** company ATS boards (Ashby, Greenhouse, Lever, Workday, SmartRecruiters), LinkedIn public job pages, YC Work at a Startup, Wellfound and Remote Rocketship.
+- **Re-check before adding:** confirm every company already in Linear still has a live posting.
+- **When to stop:** when new queries mostly return companies you already have.
+- **Rules (from `tam-builder`):**
+  - One row per company, deduplicated by website domain.
+  - Open the posting itself; never trust a search snippet.
+  - Never infer a field. Write "unverified" instead.
+  - Record the posting date and say whether it's a LinkedIn repost.
+
+### 4. Tier
+
+| Tier | Rule |
+|---|---|
+| Tier 1 | Passes all six gates; posted or reposted in the last 30 days |
+| Tier 2 | Fits, but the posting is 30+ days old or one fact needs checking |
+| Abroad | Outside India, and the posting itself states visa sponsorship or relocation help |
+| Stretch | Asks more years than the profile has, sits below level, or the pay is unlikely to reach the floor |
+
+Also record which case study to lead with, using the segment table in the profile file.
+
+### 5. Save
+
+Write `targets/YYYY-MM-DD-target-companies.md`:
+
+- the tiered tables;
+- what was searched;
+- what was likely missed;
+- the rejected companies, one line each with the reason.
+
+Never edit an older dated file.
+
+### 6. Sync to Linear
+
+- **Project:** "Job Search System", team "Life".
+- **Docs to update** (create if missing):
+
+| Doc | Update with |
+|---|---|
+| Target companies | Replace the whole table with this run's results. Each company name links to its issue. |
+| Run log | Add a dated entry at the top: segments searched, counts of new / still live / closed, and anything the user should check. |
+| Profile & ICP | Only when the profile or ICP changed |
+
+- **Issues: one per company.**
+  - **Before creating one,** search the project for the company name. If an issue already exists, update it instead.
+  - **Title:** `Company — Role title`
+  - **Labels:** one `job-tier` label and one `job-segment` label.
+  - **New issues** start in Backlog.
+  - **Description template:**
+
+```
+**Role:** [Role title](posting URL)
+**Location:** as stated in the posting
+**Posted:** date (note if LinkedIn repost)
+**Pay:** as stated, or "not stated"
+**Experience asked:** …
+**What they make:** …
+**Stage / funding:** … or "unverified"
+**Why it fits:** one line
+**Lead with:** case study
+**Hiring manager:** name and title, or "unverified"
+**Last checked:** YYYY-MM-DD
+```
+
+- **Updating existing issues:**
+  - Refresh the description and the tier label.
+  - If the posting has closed and the issue is still in Backlog or Todo, move it to Canceled with a comment saying the posting is gone.
+  - Never change the status of an issue in In Progress, Waiting or Done. Those belong to the user.
+
+## Never
+
+- Apply to a job, message anyone, or sign in to a job site on the user's behalf. Finding and ranking only.
+- Invent facts about the user or a company.
