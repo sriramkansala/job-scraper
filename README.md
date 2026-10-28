@@ -53,31 +53,57 @@ Project: **Job Search System** (team Life).
 | Profile & ICP | The profile and the six gates |
 | Target companies | The full table from the latest run, with a link to each issue |
 | Run log | One entry per run: date, what was searched, what changed |
+| Daily digest | Written by the nightly email check: what changed, what needs your decision, what's due |
+| Weekly funnel | Written on Sundays: reply rate by channel and tier, days to first reply, applications with no next action |
+| Tracking system design | How stages, channels and the email check work, and why |
 
-**Issues: one per company**
+**Issues: one per application (company + role)**
 
 - **Title:** `Company — Role title`
 - **Description:** the role link, location, posting date, pay, experience asked, what the company makes, stage, why it fits, which case study to lead with, and the hiring manager if named
-- **Labels:** one from `job-tier` (Tier 1, Tier 2, Abroad, Stretch) and one from `job-segment` (Dev tools & AI, Fintech, B2B SaaS, Design tools)
+- **Labels:**
+  - `job-stage`: where the application is (table below)
+  - `job-channel`: Cold apply, Referral, My outreach or Recruiter inbound
+  - `job-tier`: Tier 1, Tier 2, Abroad or Stretch
+  - `job-segment`: Dev tools & AI, Fintech, B2B SaaS or Design tools
+- **Due date:** the next action. Every open application should have one.
 
-**Statuses**
+**Stages**
 
-| Status | Meaning |
-|---|---|
-| Backlog | Found by Claude, not reviewed yet |
-| Todo | Reviewed, ready to apply |
-| In Progress | Tailoring the application or outreach |
-| Waiting | Applied, waiting for a reply |
-| Done | Interview or offer (add a comment saying which) |
-| Canceled | Rejected, skipped, or the posting closed (add a comment saying why) |
+On Linear's Free plan, stages are a label, and the Life team's status follows the stage.
 
-On a refresh, Claude:
+| Stage label | Enters when | Life status | Next action |
+|---|---|---|---|
+| Shortlisted | Claude's search finds it | Backlog | Review it |
+| Ready | You decide to apply | Todo | Apply, due in 3 days |
+| Applied | A confirmation email arrives, or you give a date | Waiting | Follow up at 7 and 14 days |
+| Screen | A recruiter call or assessment is booked | In Progress | Prepare, due the day before |
+| Interviewing | An interview round is booked | In Progress | Prepare for the next round |
+| Offer | Offer received | Done | Decide by the deadline |
+| Rejected / Ghosted / Withdrawn | You confirm it | Canceled | — |
 
-- adds new companies;
+Every stage change adds a comment in this format, which the weekly report counts:
+
+`STAGE <old> → <new> · <date> · source: email <id> or manual · confidence`
+
+**When you change something yourself**, move the stage label and status, then add a `STAGE … · source: manual` comment. A one-line comment is enough.
+
+**Nightly email check** (a cloud routine at 23:00 IST):
+
+- It reads new job emails in Gmail. It may only search, read and add the `Jobs` / `Jobs/Processed` labels; send, reply, forward and trash are blocked.
+- It matches each email to an issue. Anything it can't match goes to the triage issue, never a guess.
+- It records a STAGE comment for each change and writes the Daily digest.
+- During the dry run (until 4 Nov 2026) it only proposes changes.
+- After that it applies confirmations and screen or interview invites automatically.
+- Rejected, Ghosted and Withdrawn always wait for your approval: reply "approve" on the proposal.
+
+On a refresh of the company list, Claude:
+
+- adds new companies as Shortlisted;
 - updates the details on existing issues;
-- moves an issue to Canceled only if its posting has closed **and** it's still in Backlog or Todo.
+- marks an issue Canceled only if its posting has closed **and** it's still Shortlisted or Ready.
 
-It never changes an issue you've moved to In Progress, Waiting or Done.
+It never changes an issue at Applied or later.
 
 ## Running the scraper
 

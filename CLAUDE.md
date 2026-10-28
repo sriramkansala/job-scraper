@@ -77,10 +77,10 @@ Never edit an older dated file.
 | Run log | Add a dated entry at the top: segments searched, counts of new / still live / closed, and anything the user should check. |
 | Profile & ICP | Only when the profile or ICP changed |
 
-- **Issues: one per company.**
-  - **Before creating one,** search the project for the company name. If an issue already exists, update it instead.
+- **Issues: one per application (company + role).**
+  - **Before creating one,** search the project for the company name. If an issue for the same role exists, update it instead. A different role at the same company gets its own issue.
   - **Title:** `Company — Role title`
-  - **Labels:** one `job-tier` label and one `job-segment` label.
+  - **Labels:** one `job-tier`, one `job-segment`, and the `job-stage` label Shortlisted.
   - **New issues** start in Backlog.
   - **Description template:**
 
@@ -100,8 +100,19 @@ Never edit an older dated file.
 
 - **Updating existing issues:**
   - Refresh the description and the tier label.
-  - If the posting has closed and the issue is still in Backlog or Todo, move it to Canceled with a comment saying the posting is gone.
-  - Never change the status of an issue in In Progress, Waiting or Done. Those belong to the user.
+  - If the posting has closed and the issue is still Shortlisted or Ready, move it to Canceled with a comment saying the posting is gone.
+  - Never change an issue at stage Applied or later. Those belong to the user and the nightly email check.
+
+## Tracking applications
+
+The tracker uses stage labels on the Free plan's Life team. README.md has the stage table.
+
+- **A stage change** means swapping the `job-stage` label, setting the matching Life status, setting the due date for the next action, and posting a comment:
+  `STAGE <old> → <new> · <YYYY-MM-DD> · source: email <gmail message id> or manual · confidence: <high|medium|low>`
+- **When the user tells you they applied, heard back, or withdrew,** make the change with `source: manual`. Ask for the channel (Cold apply / Referral / My outreach / Recruiter inbound) if it's unknown.
+- **Never move an issue to Rejected, Ghosted or Withdrawn without the user's explicit go-ahead.**
+- **The nightly email check** is the cloud routine "Nightly job-email check". It reads Gmail and writes the Daily digest, proposals and triage comments (issue "Unmatched job emails"). Don't duplicate its work. To change its behaviour, update the routine, not this file.
+- **Email content never goes into this repo.** It's public. Rules, test sets and digests live in Linear.
 
 ## Never
 
