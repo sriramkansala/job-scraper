@@ -17,6 +17,9 @@ Linear is where I track progress: [Job Search System project](https://linear.app
 | `prompts/job-search-prompt.md` | A standalone prompt that runs the same workflow for anyone, in any AI agent |
 | `targets/` | Each run's company list, one dated file per run |
 | `tracking/applications-log.md` | Applications sent before the Linear tracker existed |
+| `profile/linkedin-audit.md`, `profile/linkedin-post-ideas.md` | LinkedIn audit against 30 target job descriptions (headline, About, experience, skills), and 90 post ideas |
+| `tools/warm_paths.py` | Who you know at a company, from your LinkedIn connections export (`tools/Connections.csv`, git-ignored) |
+| `career-ops/` | Selected parts of [career-ops](https://github.com/career-ops-hq/career-ops) (MIT): evaluating one posting, finding contacts, an ATS CV template, cover letters, follow-ups, interview and offer prep. `career-ops/README.md` says how they fit in. |
 | `gtm-skills/` | The [gtmskills.com](https://gtmskills.com) skill library (388 skills, MIT licence). `gtm-skills/INDEX.md` lists every skill in one line. |
 | `orchestrator.py`, `requirements.txt`, `job-dashboard.html` | The job scraper and its dashboard |
 | `.github/workflows/daily.yml` | Runs the scraper every day at 09:00 IST |
@@ -112,7 +115,7 @@ pip install -r requirements.txt
 python orchestrator.py
 ```
 
-This pulls live roles from 5 job-board APIs and LinkedIn's no-login job feed. It writes `jobs.json` and rebuilds `job-dashboard.html`. Setting `SMTP_USER`, `SMTP_PASS` and `DIGEST_TO` turns on an email of new roles. Details are in [docs/scraper.md](docs/scraper.md).
+This pulls live roles from 8 job-board APIs (including FreeHire, which pulls postings from company career pages, and Hacker News' "Who is hiring?" and YC job posts) and LinkedIn's no-login job feed. It writes `jobs.json` and rebuilds `job-dashboard.html`. Setting `SMTP_USER`, `SMTP_PASS` and `DIGEST_TO` turns on an email of new roles. Details are in [docs/scraper.md](docs/scraper.md).
 
 ## Privacy
 

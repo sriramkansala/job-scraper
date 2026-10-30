@@ -19,7 +19,7 @@ Senior Product Designer | Design Systems, Fintech & Enterprise SaaS
 
 ## Experience
 **TuringLabs** — Senior Product Designer (Feb 2023 – Present), Karnataka, India
-- Redesigned core DCF (Discounted Cash Flow) flow into a guided experience for private equity workflows
+- Redesigned core DCF (Discounted Cash Flow) flow into guided steps that retail investors could actually follow
 - Designed the Equity Simulation feature for scenario stress-testing before investment decisions
 - Rebuilt design token architecture: 157 component tokens → 63 semantic tokens, 73% payload cut (137KB → 37KB), theming time 2–3 days → under 1 hour
 - Designed a three-tier semantic token model with WCAG AA compliance built into the architecture
@@ -41,7 +41,7 @@ Senior Product Designer | Design Systems, Fintech & Enterprise SaaS
 ## Skills & Tools
 - **Product Design:** UX, UI, Interaction Design, IA, Wireframing, Prototyping, User Research, Usability Testing, Accessibility (WCAG AA), Responsive Design
 - **Design Systems:** Component Libraries, Design Tokens, Semantic Token Architecture, Theming, Style Guides, Pattern Libraries, Cross-Platform Consistency
-- **Domains:** Fintech, Private Equity Workflows, Financial Modeling (DCF, Equity Simulation), Enterprise SaaS, Analytics Dashboards, Consumer Mobile Apps
+- **Domains:** Fintech, Retail Investing, Financial Modeling (DCF, Equity Simulation), Enterprise SaaS, Analytics Dashboards, Consumer Mobile Apps
 - **Tools:** Figma, Framer, ProtoPie, Sketch, InVision, Zeplin, Adobe CS (Photoshop, Illustrator, After Effects), Rive
 - **Other:** Motion Design, Animation, Stakeholder Communication, Cross-Functional Collaboration, Agile/Scrum
 

@@ -114,6 +114,63 @@ def t0_workingnomads(_) -> list[Job]:
     if not out: raise Blocked("empty")
     return out
 
+# Sources below were found by reading AienTech/dossier (AGPL-3.0). Only the public
+# APIs are reused; the code is written fresh here.
+def t0_freehire(_) -> list[Job]:
+    """FreeHire: postings pulled from company ATS boards, public API, no key."""
+    out = []
+    for kw in ("product designer", "UX designer", "UI UX designer", "design systems"):
+        for offset in (0, 20, 40):
+            d = httpx.get("https://freehire.me/api/v1/agent/jobs/search", headers=UA, timeout=30,
+                          params={"q": kw, "countries": "IN", "posted_within_days": 30, "limit": 20,
+                                  "offset": offset, "description_format": "text"}).json()
+            for j in d.get("data", []):
+                t = (j.get("title") or "").strip()
+                if is_design(t):
+                    loc = j.get("location") or "India"
+                    out.append(Job("FreeHire", t, (j.get("company") or "").strip(), loc, "India",
+                                   seniority(t), (j.get("posted_at") or "")[:10], j.get("url") or ""))
+    if not out: raise Blocked("empty")
+    return out
+
+HN_DESIGN = re.compile(r"\b(product|ux|ui|interaction|visual|design systems?)\s+design(er)?s?\b|\bdesigner\b", re.I)
+HN_PLACE = re.compile(r"\b(india|bangalore|bengaluru|apac|asia|remote)\b", re.I)
+HN_LOCKED = re.compile(r"remote\s*\((?![^)]*(india|apac|asia|global|worldwide|anywhere))[^)]*\)|\b(us|usa|eu|uk)[- ](only|based)\b", re.I)
+def t0_hn_whoishiring(_) -> list[Job]:
+    """This month's HN 'Ask HN: Who is hiring?' posts for designers open to India or remote."""
+    s = httpx.get("https://hn.algolia.com/api/v1/search_by_date",
+                  params={"tags": "story,author_whoishiring", "hitsPerPage": 10}, headers=UA, timeout=30).json()
+    thread = next((h for h in s.get("hits", []) if (h.get("title") or "").lower().startswith("ask hn: who is hiring")), None)
+    if not thread: raise Blocked("no hiring thread this month")
+    posts = httpx.get(f"https://hn.algolia.com/api/v1/items/{thread['objectID']}", headers=UA, timeout=30).json().get("children", [])
+    out = []
+    for p in posts:
+        text = html.unescape(re.sub(r"<p>", "\n", p.get("text") or ""))
+        text = re.sub(r"<[^>]+>", "", text)
+        header = text.split("\n", 1)[0]
+        if not (HN_DESIGN.search(header) and HN_PLACE.search(header)) or HN_LOCKED.search(header):
+            continue
+        parts = [x.strip() for x in header.split("|")]
+        role = next((x for x in parts if HN_DESIGN.search(x)), parts[1] if len(parts) > 1 else "Designer")[:120]
+        out.append(Job("HN Who is hiring", role, re.sub(r"\s*\(.*\)$", "", parts[0])[:80], " · ".join(parts[1:4])[:120],
+                       region_of(header), seniority(role), (p.get("created_at") or "")[:10],
+                       f"https://news.ycombinator.com/item?id={p.get('id')}"))
+    return out  # an empty month is a real answer, not a block
+
+def t0_yc_jobs(_) -> list[Job]:
+    """YC startups' own job posts on Hacker News (official HN API)."""
+    api, out = "https://hacker-news.firebaseio.com/v0", []
+    for i in httpx.get(f"{api}/jobstories.json", headers=UA, timeout=30).json()[:100]:
+        it = httpx.get(f"{api}/item/{i}.json", headers=UA, timeout=30).json() or {}
+        title = it.get("title") or ""
+        if not re.search(r"design", title, re.I): continue
+        m = re.match(r"^(.+?)\s*\(\s*YC\s+\w\d{2}\s*\)", title)
+        loc = "Remote" if re.search(r"remote", title, re.I) else "see post"
+        out.append(Job("YC (HN jobs)", title, m.group(1) if m else title.split(" is hiring")[0], loc, region_of(loc),
+                       seniority(title), dt.datetime.utcfromtimestamp(it.get("time", 0)).strftime("%Y-%m-%d"),
+                       it.get("url") or f"https://news.ycombinator.com/item?id={i}"))
+    return out  # most weeks have no design posts; that's not a block
+
 def t1_linkedin_guest(_) -> list[Job]:
     """Tier 1: LinkedIn guest HTML cards (no login). India + remote."""
     out, base = [], "https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search"
@@ -182,6 +239,9 @@ PORTALS: dict[str, list[Callable]] = {
     "Jobicy":         [t0_jobicy],
     "Arbeitnow":      [t0_arbeitnow],
     "WorkingNomads":  [t0_workingnomads],
+    "FreeHire":       [t0_freehire],
+    "HN Who is hiring": [t0_hn_whoishiring],
+    "YC (HN jobs)":   [t0_yc_jobs],
     "LinkedIn":       [t1_linkedin_guest],
     # Example of a full fallback chain for a protected portal:
     # "Wellfound": [t0_try_api, make_scrapling_stealthy(URL, parse), make_patchright(URL, parse),

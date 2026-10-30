@@ -6,3 +6,5 @@ profile.json
 resume.pdf
 .claude/
 .DS_Store
+Connections.csv
+*.csv

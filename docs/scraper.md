@@ -24,7 +24,7 @@ pip install -r requirements.txt
 python orchestrator.py
 ```
 
-This pulls live roles from 6 JSON APIs + LinkedIn's guest feed (Tier 0–1, no login),
+This pulls live roles from 8 JSON APIs (including FreeHire, HN "Who is hiring?" and YC jobs on HN) + LinkedIn's guest feed (Tier 0–1, no login),
 writes `jobs.json`, and regenerates `job-dashboard.html`. Open the HTML to browse.
 
 ## Enable email alerts (replaces the old Aside routine)

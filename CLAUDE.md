@@ -8,6 +8,10 @@ This repo runs Sriram's job search as a product designer. Read `README.md` for t
 |---|---|
 | "Run the job search", "refresh the target companies", "find companies to apply to" | The full workflow below |
 | "Update my profile" or "rebuild the ICP" | Steps 1–2 only, then update the Profile & ICP doc in Linear |
+| "Evaluate this job" or a pasted posting | Follow `career-ops/modes/oferta.md` (read `career-ops/README.md` first for how it maps onto this repo). Run its liveness and dealbreaker gates first, then blocks A–H. Then check the role against the six gates below. |
+| "Who should I contact at X?" or "draft a note to the hiring manager" | First run `python3 tools/warm_paths.py "X"` (or `--all`). It reads his LinkedIn `Connections.csv` export from `tools/`, which is git-ignored. Then follow `career-ops/modes/contacto.md` for cold contacts. Check 2nd-degree paths with the search link it prints. Never send anything. |
+| "Tailor my CV for X" or "make an ATS resume" | `career-ops/modes/ats.md` with `career-ops/templates/ats/cv-template.ats.html`, plus these steps: (1) act as the ATS parser and list every keyword, skill and requirement in the posting; (2) rewrite bullets to mirror that language using only facts from `profile/`; (3) give a before and after keyword match % and flag any line that reads as keyword stuffing. |
+| "When do I follow up?", "why am I getting rejected?", interview or offer prep | `career-ops/modes/followup.md`, `patterns.md`, `interview-prep.md` or `offer-prep.md`. |
 | Any other go-to-market request (outreach, positioning, research) | Pick the best skill from `gtm-skills/INDEX.md`, read its `SKILL.md` and follow it. Say which skill you picked. Ignore `swan.md` files. |
 
 ## The workflow
