@@ -9,7 +9,7 @@ Built 30 Oct 2026 from Prompt 5. Target role: Senior Product Designer. Target te
 - `gali-firon/anti-ai-slop-writing`. I ran both of its passes on every hook and angle. Pass one removed these: "it's not X, it's Y" lines, "Here's the thing" teasers, colon reveals, questions the post answers itself, "Think of it like" analogies, and invented numbers. Pass two avoided stacked buzzwords and em dashes. When you write the posts, run the same two passes, then add one or two real details of your own.
 
 **Check before posting.**
-- Your files disagree on the DCF audience. The resume says retail investors and the LinkedIn headline says private equity. These ideas use retail investors.
+- The DCF flow was built for private-equity workflows (confirmed 30 Oct).
 - `designer-profile.md` gives your Turinglabs title as Senior Product Designer, but `01-profile-and-icp.md` says Product Designer. Confirm which one is official before you post P4-16.
 - Get permission before showing any Turinglabs or L&T screen. Redraw it, or blur client data.
 - Turinglabs will see the Pillar 4 posts, since you still work there. None of them criticise a current or past employer.
@@ -50,11 +50,11 @@ Built 30 Oct 2026 from Prompt 5. Target role: Senior Product Designer. Target te
 
 | # | Hook | Angle | Format |
 |---|---|---|---|
-| 2-1 ★ | I redesigned a DCF flow so a retail investor could follow it. | Splitting a discounted cash flow model into guided steps changes who can use it. Show the structure before and after. **needs your story:** what the old flow looked like and where people got stuck. | carousel (8 slides) |
+| 2-1 ★ | I redesigned a DCF flow so a private-equity team could work through it step by step. | Splitting a discounted cash flow model into guided steps changes who can use it. Show the structure before and after. **needs your story:** what the old flow looked like and where people got stuck. | carousel (8 slides) |
 | 2-2 ★ | Investors should be able to stress-test a decision before they make it. | How Equity Simulation was designed for scenario stress-testing, and how it shows uncertainty without scaring people off. **needs your story:** one decision about how scenarios are displayed. | short video |
 | 2-3 ★ | Client theming used to take us 2–3 days. Now it takes under an hour. | The business case for the token rebuild, measured in onboarding time per client. Pixel consistency is the smaller win. | before/after image |
 | 2-4 ★ | We check WCAG AA contrast when a colour token is defined. | Checking accessibility when each token is defined means every screen inherits compliant colour pairs, so contrast is settled before anyone draws a screen. | carousel (6 slides) |
-| 2-5 | Financial jargon in a product is a design problem. | What you learned labelling DCF inputs, such as discount rate and terminal value, for retail investors. **needs your story:** one label you changed, and why. | before/after image |
+| 2-5 | Financial jargon in a product is a design problem. | What you learned labelling DCF inputs, such as discount rate and terminal value, for private-equity users. **needs your story:** one label you changed, and why. | before/after image |
 | 2-6 | How do you guide a beginner without slowing down an expert? | The trade-off in the guided DCF flow between hand-holding and speed, and how you handled it. **needs your story:** whether experienced users pushed back, and what you did. | text post |
 | 2-7 | Default values in a financial model are design decisions. | Every pre-filled input in a DCF or a simulation nudges the result, so defaults deserve the same review as screens. **needs your story:** one default you debated. | text post |
 | 2-8 | Showing a range of outcomes is harder than showing one number. | How Equity Simulation presents several scenarios so that a range reads as useful information and doesn't come across as doubt. | before/after image |
@@ -66,7 +66,7 @@ Built 30 Oct 2026 from Prompt 5. Target role: Senior Product Designer. Target te
 | 2-14 | Numbers on a financial screen need a hierarchy, the same as text. | How you decide which figures in a DCF or a simulation get visual weight. | before/after image |
 | 2-15 | The first screen of a complex flow should ask for one thing. | A lesson from the DCF redesign: start with a single input that builds confidence. **needs your story:** confirm what the first step asks for. | screenshot plus text |
 | 2-16 | Error states in a financial model need to explain the maths. | A validation message for a financial input should say what's wrong with the number and why it matters. **needs your story:** one example message. | before/after image |
-| 2-17 | Moving from enterprise dashboards to retail investors changed who I design for. | What changed when you went from internal tools at L&T to a product retail investors choose to use. **needs your story:** one habit you had to drop. | text post |
+| 2-17 | Moving from enterprise dashboards to private-equity workflows changed who I design for. | What changed when you went from internal tools at L&T to a product private-equity teams use to make investment decisions. **needs your story:** one habit you had to drop. | text post |
 | 2-18 | Handoff got shorter once design and code used the same token names. | Shared semantic names act as the handoff contract between Figma and code. **needs your story:** a handoff conversation before and after. | screenshot plus text |
 | 2-19 | Tables are most of the interface in a financial product. | What the DCF and simulation work taught you about dense financial tables: alignment, units and sticky headers. **needs your story:** one table decision. | carousel (6 slides) |
 | 2-20 | Who owns a design system after the rebuild ships? | What owning the system looks like after 157 → 63, from governance to deciding on new token requests. **needs your story:** how ownership works on your team now. | text post |
@@ -94,7 +94,7 @@ Built 30 Oct 2026 from Prompt 5. Target role: Senior Product Designer. Target te
 | 3-14 | Design tokens should be reviewed like code. | A token change ripples across every screen, so tokens need owners, changelogs and review. | screenshot plus text |
 | 3-15 | Rive and Framer have changed who can ship production motion. | Tools like Rive let the designer own the shipped motion asset, where before it was a handoff to developers. Draw on your Camberry background. | short video |
 | 3-16 | Most bug reports fail because they are missing context. | Capture replay and environment by default. This is the problem Notate was built around. | text post |
-| 3-17 | Fintech design in India has to work for first-time investors. | Plain language and guided steps should be the default for people new to investing, as in the DCF flow for retail investors. | carousel (5 slides) |
+| 3-17 | Expert tools need guided steps too. | Private-equity users know the finance; the product still has to make a dense DCF model easy to work through, as in the Turinglabs DCF flow. | carousel (5 slides) |
 | 3-18 | Hiring for design systems? Ask candidates about a token they deleted. | Removing tokens shows more systems judgement than adding them. You removed 94. | text post |
 | 3-19 | AI features in fintech need a visible "why" next to every suggestion. | Explainability is a UI requirement: show the inputs and the confidence level next to every AI suggestion. | carousel (5 slides) |
 | 3-20 | Duration and easing deserve tokens, the same as colour does. | Motion tokens give animation the consistency a colour system gives colour. Draw on your motion style guide work at Camberry. | carousel (6 slides) |
@@ -139,7 +139,7 @@ Post on Monday, Wednesday and Friday. The schedule front-loads the ★ posts and
 | Week | Mon | Wed | Fri |
 |---|---|---|---|
 | 1 | 1-1 ★ Token rebuild, 157 → 63 (carousel) | 1-6 ★ Notate built with Claude Code (video) | 4-1 ★ Looking for a senior role in Bengaluru (carousel) |
-| 2 | 2-1 ★ DCF flow for retail investors (carousel) | 3-1 ★ Designing around delayed market data (before/after) | 1-7 ★ Cutting a feature from Notate (before/after) |
+| 2 | 2-1 ★ DCF flow for private-equity workflows (carousel) | 3-1 ★ Designing around delayed market data (before/after) | 1-7 ★ Cutting a feature from Notate (before/after) |
 | 3 | 2-3 ★ Theming from 2–3 days to under an hour (before/after) | 1-13 ★ The Artos 30% drop-off (screenshot) | 2-2 ★ Equity Simulation (video) |
 | 4 | 2-4 ★ WCAG AA checked when each token is defined (carousel) | 4-2 Job search ICP for employers (carousel) | 3-19 AI suggestions in fintech need a visible "why" (carousel) |
 

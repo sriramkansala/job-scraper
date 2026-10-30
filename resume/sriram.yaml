@@ -30,7 +30,7 @@ cv:
         end_date: present
         location: Karnataka, India
         highlights:
-          - Redesigned the core DCF (discounted cash flow) flow into guided steps that retail investors could actually follow.
+          - Redesigned the core DCF (discounted cash flow) flow into a guided experience for private-equity workflows.
           - Designed the Equity Simulation feature, letting investors stress-test scenarios before making investment decisions.
           - "Rebuilt the design token architecture as a three-tier semantic model: 157 component tokens reduced to 63 semantic tokens, cutting the token payload 73% (137KB to 37KB)."
           - Cut client theming time from 2–3 days to under an hour, with WCAG AA contrast validated at token definition.
@@ -77,7 +77,7 @@ cv:
       - label: Design systems
         details: Component libraries, design tokens, semantic token architecture, theming, style guides, pattern libraries, cross-platform consistency
       - label: Domains
-        details: Fintech, retail investing, financial modelling (DCF, equity simulation), enterprise SaaS, analytics dashboards, consumer mobile apps
+        details: Fintech, private equity, financial modelling (DCF, equity simulation), enterprise SaaS, analytics dashboards, consumer mobile apps
       - label: Tools
         details: Figma, Framer, ProtoPie, Rive, Sketch, InVision, Zeplin, Adobe Photoshop, Illustrator, After Effects, Claude Code
       - label: Other

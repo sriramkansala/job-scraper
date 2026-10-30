@@ -32,7 +32,7 @@ Number of the 30 target job descriptions that ask for each thing:
    - **L&T:** LinkedIn says you left in May 2023, which overlaps Turinglabs (from Feb 2023). Your resume says Dec 2022.
    - **Camberry:** LinkedIn says Sep 2019 – Sep 2020, and your resume says Aug 2019 – Jul 2020.
    - **Fix:** use whatever your offer and relieving letters say, everywhere.
-5. **Your headline sends Bengaluru recruiters away.** "Open to Remote (Global)" plus "Private Equity" mislead: you're also open to Bengaluru hybrid, and the DCF work was for retail investors.
+5. **Your headline sends Bengaluru recruiters away.** "Open to Remote (Global)" tells Bengaluru recruiters you only want remote, but you're also open to Bengaluru hybrid. Keep "Private Equity": the DCF work was for private-equity workflows.
 6. **Smaller issues:**
    - The old `sriramkansala.webflow.io` link is still on the L&T entry.
    - There's no featured section.
@@ -50,7 +50,7 @@ Pick the version that matches your official title:
 
 > I'm a product designer in Bengaluru with 5+ years designing fintech and enterprise B2B products, and a background in motion design. I do my best work where products are dense with data, and where the design system has to hold up in code rather than only in Figma.
 >
-> At Turinglabs I rebuilt our colour-token architecture from scratch: 157 component tokens became 63 semantic ones. The token payload dropped from 137KB to 37KB, client theming went from 2–3 days to under an hour, and WCAG AA contrast is checked when a token is defined, not audited afterwards. I also redesigned the core DCF flow into guided steps that retail investors can follow, and designed Equity Simulation for stress-testing scenarios before an investment decision.
+> At Turinglabs I rebuilt our colour-token architecture from scratch: 157 component tokens became 63 semantic ones. The token payload dropped from 137KB to 37KB, client theming went from 2–3 days to under an hour, and WCAG AA contrast is checked when a token is defined, not audited afterwards. I also redesigned the core DCF flow into a guided experience for private-equity workflows, and designed Equity Simulation for stress-testing scenarios before an investment decision.
 >
 > I prototype and ship with AI tools. Notate, a Chrome extension for capturing and reporting UI issues, is one I designed and built with Claude Code. It's live on the Chrome Web Store with Jira, Linear, GitLab and Trello integrations. On Artos, a personal-finance app with 10k+ downloads, I learned the hard way that a redesign can cost retention, and how to diagnose it.
 >
@@ -66,7 +66,7 @@ Every fact here comes from `job-scraper/profile/`. If you'd rather not mention t
 **Turinglabs** (use your official title):
 - Rebuilt the colour-token architecture: 157 component tokens → 63 semantic tokens, payload 137KB → 37KB, client theming from 2–3 days to under an hour.
 - Designed a three-tier semantic token model with WCAG AA validated when a token is defined.
-- Redesigned the core DCF flow into guided steps for retail investors.
+- Redesigned the core DCF flow into a guided experience for private-equity workflows.
 - Designed Equity Simulation, for stress-testing scenarios before an investment decision.
 
 **Larsen & Toubro Infotech, UX Designer:** fix the end date, and remove the webflow link.

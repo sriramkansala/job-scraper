@@ -25,7 +25,7 @@ Built 2 Oct 2026. Sources: the portfolio site source (`Sriram Website/website-3.
 
 | Period | Company | Title | What you did |
 |---|---|---|---|
-| Feb 2023 – now | Turinglabs | Product Designer | Redesigned the core DCF flow into guided steps for retail investors. Designed Equity Simulation (scenario stress-testing). Rebuilt the colour-token architecture: 157 → 63 tokens, 137KB → 37KB, client theming from 2–3 days to under an hour, WCAG AA validated at definition time. |
+| Feb 2023 – now | Turinglabs | Product Designer | Redesigned the core DCF flow into a guided experience for private-equity workflows. Designed Equity Simulation (scenario stress-testing). Rebuilt the colour-token architecture: 157 → 63 tokens, 137KB → 37KB, client theming from 2–3 days to under an hour, WCAG AA validated at definition time. |
 | Aug 2021 – Dec 2022 | Larsen & Toubro Infotech | UX / Product Designer | Enterprise analytics dashboards and internal tools for manufacturing and infrastructure clients. Standardised UI patterns across modules. Specs and redlines. |
 | 2021 – 2022 | Studo Sorted | Design consultant | Listed on the site only; no detail anywhere. |
 | Mar 2021 – Jun 2021 | Mountain Studio | Jr Product Designer | Listed on LinkedIn only; no detail. |
@@ -70,7 +70,7 @@ LinkedIn specifically:
 - **Notate is missing.** Add it as a project or an experience entry with the Web Store link.
 - **Top skills.** Replace Graphic Design, Presentation Skills and Leadership with Design Systems, Product Design, Interaction Design, Figma and Accessibility.
 - **Old Webflow link.** `sriramkansala.webflow.io` is still attached to the L&T entry.
-- **"Private Equity" in the headline.** The resume describes the DCF flow as built for retail investors, while `profile/designer-profile.md` describes it as built for private-equity workflows. Pick one and use it everywhere.
+- **"Private Equity" in the headline.** Resolved 30 Oct: the DCF flow was built for private-equity workflows, so keep it. (An older resume draft said retail investors.)
 - **"Open to Remote (Global)" only.** You told me you are also open to Bengaluru hybrid and relocation. The headline and summary currently tell Bengaluru recruiters to skip you.
 
 ---
