@@ -23,6 +23,7 @@ Linear is where I track progress: [Job Search System project](https://linear.app
 | `gtm-skills/` | The [gtmskills.com](https://gtmskills.com) skill library (388 skills, MIT licence). `gtm-skills/INDEX.md` lists every skill in one line. |
 | `orchestrator.py`, `requirements.txt`, `job-dashboard.html` | The job scraper and its dashboard |
 | `.github/workflows/daily.yml` | Runs the scraper every day at 09:00 IST |
+| `docs/related-repos.md` | 104 open-source repos for job scraping, resumes, AI job agents, networking and interviews, with the top 26 ranked for this setup |
 | `docs/` | Scraper design and sources, a list of 88 job portals, and notes on auto-apply tools |
 
 ## How the Claude workflow runs
