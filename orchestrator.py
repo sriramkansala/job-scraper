@@ -23,7 +23,7 @@ Run:
     python orchestrator.py
 """
 from __future__ import annotations
-import json, re, time, html, datetime as dt
+import json, os, re, time, html, datetime as dt
 from dataclasses import dataclass, asdict
 from typing import Callable, Optional
 
@@ -57,8 +57,9 @@ def region_of(loc: str) -> str:
     if any(w in l for w in ("worldwide", "anywhere", "remote", "global")): return "Worldwide"
     return "Region-locked"
 
-DESIGN = re.compile(r"product\s*design|ux|ui|user\s*experience|user\s*interface|interaction design|design system", re.I)
-NOT_DESIGN = re.compile(r"engineer|developer|architect|sales|recruit|hr\b|data entry|scheduler", re.I)
+DESIGN = re.compile(r"product\s*design|\bux\b|\bui\b|user\s*experience|user\s*interface|interaction design|design system", re.I)
+NOT_DESIGN = re.compile(r"engineer|developer|architect|sales|recruit|talent|\bhr\b|data entry|scheduler|furniture|fashion|"
+                        r"textile|apparel|garment|jewel|interior|mechanical|packaging|industrial|instructional", re.I)
 def is_design(title: str) -> bool:
     return bool(title and DESIGN.search(title) and not NOT_DESIGN.search(title))
 
@@ -171,6 +172,141 @@ def t0_yc_jobs(_) -> list[Job]:
                        it.get("url") or f"https://news.ycombinator.com/item?id={i}"))
     return out  # most weeks have no design posts; that's not a block
 
+# ---------------------------------------------------------------- high-coverage engines (Python 3.10+)
+# These need the optional packages in requirements.txt. Missing ones raise
+# Blocked, so the rest of the scrape still runs on older Pythons.
+INDIA_LOC = re.compile(r"\bindia\b|bengaluru|bangalore|hyderabad|pune|mumbai|chennai|gurugram|gurgaon|noida|"
+                       r"delhi|kolkata|ahmedabad|kochi|jaipur|chandigarh|\bIND?\b", re.I)
+FRESH_DAYS = int(os.environ.get("FRESH_DAYS", "45"))
+
+def is_fresh(date: str) -> bool:
+    """Undated postings count as fresh; dated ones must be within FRESH_DAYS."""
+    try: return (dt.datetime.utcnow() - dt.datetime.fromisoformat(str(date)[:10])).days <= FRESH_DAYS
+    except ValueError: return True
+
+def t0_jobspy(_) -> list[Job]:
+    """Naukri, Indeed India and Glassdoor India via speedyapply/JobSpy (MIT)."""
+    try: from jobspy import scrape_jobs
+    except ImportError: raise Blocked("pip install python-jobspy (Python 3.10+)")
+    out = []
+    for site in ("naukri", "indeed", "glassdoor"):
+        for term in ("product designer", "ux designer", "ui ux designer", "design systems designer"):
+            try:
+                df = scrape_jobs(site_name=[site], search_term=term, location="Bengaluru", country_indeed="India",
+                                 results_wanted=60, hours_old=24 * FRESH_DAYS, verbose=0)
+            except Exception as e:
+                print(f"   jobspy {site} '{term}': {type(e).__name__}"); continue
+            for r in df.to_dict("records"):
+                t = str(r.get("title") or "")
+                if is_design(t):
+                    loc = str(r.get("location") or "India")
+                    out.append(Job(f"JobSpy/{site}", t, str(r.get("company") or ""), loc,
+                                   "India" if INDIA_LOC.search(loc) else region_of(loc), seniority(t),
+                                   str(r.get("date_posted") or "")[:10], str(r.get("job_url") or "")))
+    if not out: raise Blocked("no design rows from naukri/indeed/glassdoor")
+    return out
+
+# The kalil0321/ats-scrapers project (MIT) publishes a daily dataset of ~5M postings,
+# scraped from ~80k company careers sites across 63 hiring platforms. Reading one
+# parquet file per platform covers Workday, SuccessFactors, Oracle, iCIMS, and Keka
+# and Darwinbox (used by Indian companies) without a headless browser.
+JOBHIVE = "https://storage.stapply.ai/jobhive/v1"
+JOBHIVE_ATS = os.environ.get("JOBHIVE_ATS", "keka,darwinbox,workday,successfactors,oracle,icims,smartrecruiters,"
+                             "greenhouse,lever,ashby,phenom,eightfold,workable,google,uber,ycombinator").split(",")
+def t0_jobhive(_) -> list[Job]:
+    try: import pyarrow.parquet as pq
+    except ImportError: raise Blocked("pip install pyarrow")
+    import tempfile
+    cols = ["title", "company", "location", "country_iso", "is_remote", "posted_at", "url"]
+    out = []
+    def download(ats: str, path: str) -> bool:
+        for attempt in range(3):
+            try:
+                with open(path, "wb") as f, httpx.stream("GET", f"{JOBHIVE}/{ats}/jobs.parquet", headers=UA,
+                                                         timeout=300, follow_redirects=True) as r:
+                    if r.status_code != 200: print(f"   jobhive {ats}: HTTP {r.status_code}"); return False
+                    for chunk in r.iter_bytes(1 << 20): f.write(chunk)
+                return True
+            except httpx.HTTPError as e:
+                print(f"   jobhive {ats}: {type(e).__name__}, retry {attempt + 1}/3"); time.sleep(5)
+        return False
+    for ats in [a.strip() for a in JOBHIVE_ATS if a.strip()]:
+        with tempfile.NamedTemporaryFile(suffix=".parquet") as tmp:
+            if not download(ats, tmp.name): continue
+            for row in pq.read_table(tmp.name, columns=cols).to_pylist():
+                t, loc = row["title"] or "", row["location"] or ""
+                india = row["country_iso"] == "IN" or bool(INDIA_LOC.search(loc))
+                if india and is_design(t) and is_fresh(row["posted_at"]):
+                    out.append(Job(f"ATS/{ats}", t.strip(), row["company"] or "", loc, "India", seniority(t),
+                                   str(row["posted_at"] or "")[:10], row["url"] or ""))
+    if not out: raise Blocked("no India design rows in the dataset")
+    return out
+
+# Company boards on Greenhouse, Lever and Ashby, polled directly through their public
+# APIs. Lists come from veresk06/open-ats-feed (MIT, each board checked live) and
+# Riley-Dorrington/job-board-aggregator (company lists CC BY-NC 4.0, so they're fetched
+# at run time, not copied into this repo). Fresher than the daily dataset, and it
+# includes boards the dataset misses.
+BOARD_LISTS = {
+    "greenhouse": ["https://raw.githubusercontent.com/Riley-Dorrington/job-board-aggregator/main/data/greenhouse_companies.json"],
+    "lever":      ["https://raw.githubusercontent.com/Riley-Dorrington/job-board-aggregator/main/data/lever_companies.json"],
+    "ashby":      ["https://raw.githubusercontent.com/Riley-Dorrington/job-board-aggregator/main/data/ashby_companies.json"],
+}
+OPEN_ATS_FEED = "https://raw.githubusercontent.com/veresk06/open-ats-feed/main/actor/data/companies.json"
+BOARD_API = {
+    "greenhouse": "https://boards-api.greenhouse.io/v1/boards/{t}/jobs",
+    "lever":      "https://api.lever.co/v0/postings/{t}?mode=json",
+    "ashby":      "https://api.ashbyhq.com/posting-api/job-board/{t}",
+}
+
+def board_tokens() -> dict[str, set[str]]:
+    tokens = {ats: set() for ats in BOARD_API}
+    for ats, urls in BOARD_LISTS.items():
+        for u in urls:
+            try: tokens[ats].update(httpx.get(u, headers=UA, timeout=60).json())
+            except Exception as e: print(f"   board list {ats}: {type(e).__name__}")
+    try:
+        feed = httpx.get(OPEN_ATS_FEED, headers=UA, timeout=60).json().get("providers", {})
+        for ats in tokens:
+            tokens[ats].update(t for t, _ in feed.get(ats, {}).get("live", []))
+    except Exception as e: print(f"   open-ats-feed: {type(e).__name__}")
+    return tokens
+
+def parse_board(ats: str, token: str, d) -> list[Job]:
+    if ats == "greenhouse":
+        rows = [(j.get("title", ""), (j.get("location") or {}).get("name", ""), j.get("updated_at", ""), j.get("absolute_url", ""))
+                for j in d.get("jobs", [])]
+    elif ats == "lever":
+        rows = [(j.get("text", ""), (j.get("categories") or {}).get("location", "") or "",
+                 dt.datetime.utcfromtimestamp(j["createdAt"] / 1000).strftime("%Y-%m-%d") if j.get("createdAt") else "",
+                 j.get("hostedUrl", "")) for j in (d if isinstance(d, list) else [])]
+    else:
+        rows = [(j.get("title", ""), " · ".join([j.get("location") or ""] + [a.get("location", "") for a in j.get("secondaryLocations") or []]),
+                 j.get("publishedAt", ""), j.get("jobUrl", "")) for j in d.get("jobs", [])]
+    return [Job(f"ATS/{ats} board", t.strip(), token, loc, "India", seniority(t), str(date)[:10], url)
+            for t, loc, date, url in rows if is_design(t) and INDIA_LOC.search(loc or "") and is_fresh(date)]
+
+def t0_ats_boards(_) -> list[Job]:
+    import asyncio
+    tokens = board_tokens()
+    limit = int(os.environ.get("ATS_BOARDS_LIMIT", "0"))
+    work = [(ats, t) for ats, ts in tokens.items() for t in sorted(ts)][: limit or None]
+    print(f"   polling {len(work)} boards ({', '.join(f'{a} {len(t)}' for a, t in tokens.items())})")
+    out: list[Job] = []
+    async def run():
+        sem = asyncio.Semaphore(int(os.environ.get("ATS_BOARDS_CONCURRENCY", "40")))
+        async with httpx.AsyncClient(headers=UA, timeout=20, follow_redirects=True) as client:
+            async def one(ats, token):
+                async with sem:
+                    try:
+                        r = await client.get(BOARD_API[ats].format(t=token))
+                        if r.status_code == 200: out.extend(parse_board(ats, token, r.json()))
+                    except Exception: pass
+            await asyncio.gather(*(one(a, t) for a, t in work))
+    asyncio.run(run())
+    if not out: raise Blocked("no India design roles on the polled boards")
+    return out
+
 def t1_linkedin_guest(_) -> list[Job]:
     """Tier 1: LinkedIn guest HTML cards (no login). India + remote."""
     out, base = [], "https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search"
@@ -242,6 +378,9 @@ PORTALS: dict[str, list[Callable]] = {
     "FreeHire":       [t0_freehire],
     "HN Who is hiring": [t0_hn_whoishiring],
     "YC (HN jobs)":   [t0_yc_jobs],
+    "Naukri/Indeed/Glassdoor": [t0_jobspy],
+    "Careers sites (dataset)": [t0_jobhive],
+    "Company boards (direct)": [t0_ats_boards],
     "LinkedIn":       [t1_linkedin_guest],
     # Example of a full fallback chain for a protected portal:
     # "Wellfound": [t0_try_api, make_scrapling_stealthy(URL, parse), make_patchright(URL, parse),

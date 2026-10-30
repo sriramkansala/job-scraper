@@ -8,3 +8,6 @@ resume.pdf
 .DS_Store
 Connections.csv
 tools/*.csv
+
+# RenderCV intermediate output (resume/build.sh)
+resume/rendercv_output/

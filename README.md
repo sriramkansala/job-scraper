@@ -111,12 +111,30 @@ It never changes an issue at Applied or later.
 
 ## Running the scraper
 
+Needs Python 3.10+ (the daily Action uses 3.12). On a Mac with an older Python, use [uv](https://docs.astral.sh/uv/):
+
+```bash
+uv run --python 3.12 --with-requirements requirements.txt python orchestrator.py
+```
+
+Or, with Python 3.10+ installed:
+
 ```bash
 pip install -r requirements.txt
 python orchestrator.py
 ```
 
-This pulls live roles from 8 job-board APIs (including FreeHire, which pulls postings from company career pages, and Hacker News' "Who is hiring?" and YC job posts) and LinkedIn's no-login job feed. It writes `jobs.json` and rebuilds `job-dashboard.html`. Setting `SMTP_USER`, `SMTP_PASS` and `DIGEST_TO` turns on an email of new roles. Details are in [docs/scraper.md](docs/scraper.md).
+It pulls India and remote design roles from:
+
+- **Job boards:** RemoteOK, Remotive, Jobicy, Arbeitnow, Working Nomads, FreeHire, Hacker News' "Who is hiring?" and YC job posts, LinkedIn's no-login feed, and Naukri, Indeed India and Glassdoor India via JobSpy.
+- **About 80,000 company careers sites,** through the ats-scrapers daily dataset: Workday, SuccessFactors, Oracle, iCIMS, Greenhouse, Lever, Ashby, and Keka and Darwinbox for Indian companies.
+- **About 18,800 Greenhouse, Lever and Ashby boards,** polled directly.
+
+A full run takes about 10 minutes. It writes `jobs.json` and rebuilds `job-dashboard.html`. Setting `SMTP_USER`, `SMTP_PASS` and `DIGEST_TO` turns on an email of new roles. Details are in [docs/scraper.md](docs/scraper.md), and every source is listed in [docs/job-scraper-sources.md](docs/job-scraper-sources.md).
+
+## Your resume
+
+`resume/sriram.yaml` is the single source of truth. `./resume/build.sh` rebuilds `resume/Damotharan-Sriram-Product-Designer.pdf` with [RenderCV](https://github.com/rendercv/rendercv) and checks it with `tools/check_resume_pdf.py`. The check covers whether screening software can read the text, whether your contact details are plain text, sections and dates. Add `--jd posting.txt` for keyword coverage against one job.
 
 ## Privacy
 
