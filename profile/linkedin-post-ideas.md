@@ -22,7 +22,7 @@ Built 30 Oct 2026 from Prompt 5. Target role: Senior Product Designer. Target te
 
 | # | Hook | Angle | Format |
 |---|---|---|---|
-| 1-1 ★ | I rebuilt our colour tokens and 157 of them became 63. | Walk through the three-tier semantic model, the naming grammar and the migration plan behind 157 → 63. End with the token count and the payload cut, and save the theming-time result for P2-3. | carousel (8 slides) |
+| 1-1 ★ | I rebuilt our colour tokens and 157 of them became 64. | Walk through the three-tier semantic model, the naming grammar and the migration plan behind 157 → 64. End with the token count and the payload cut, and save the theming-time result for P2-3. | carousel (8 slides) |
 | 1-2 | Our token file was 137KB. After the rebuild it was 37KB. | Explain why moving from component tokens to semantic ones cut the payload by 73%, and what that meant for the engineers shipping it. **needs your story:** one engineering or performance effect they noticed. | before/after image |
 | 1-3 | Every rule in a design system needs a written exception list. | The token rebuild has documented exceptions, and writing them down stopped people from quietly working around the system. **needs your story:** one exception and why it earned its place. | screenshot plus text |
 | 1-4 | A token name should tell you where it's allowed to go. | Show the naming grammar from the rebuild and how each name encodes its role in the UI, so nobody has to guess the hex. | carousel (6 slides) |
@@ -69,7 +69,7 @@ Built 30 Oct 2026 from Prompt 5. Target role: Senior Product Designer. Target te
 | 2-17 | Moving from enterprise dashboards to private-equity workflows changed who I design for. | What changed when you went from internal tools at L&T to a product private-equity teams use to make investment decisions. **needs your story:** one habit you had to drop. | text post |
 | 2-18 | Handoff got shorter once design and code used the same token names. | Shared semantic names act as the handoff contract between Figma and code. **needs your story:** a handoff conversation before and after. | screenshot plus text |
 | 2-19 | Tables are most of the interface in a financial product. | What the DCF and simulation work taught you about dense financial tables: alignment, units and sticky headers. **needs your story:** one table decision. | carousel (6 slides) |
-| 2-20 | Who owns a design system after the rebuild ships? | What owning the system looks like after 157 → 63, from governance to deciding on new token requests. **needs your story:** how ownership works on your team now. | text post |
+| 2-20 | Who owns a design system after the rebuild ships? | What owning the system looks like after 157 → 64, from governance to deciding on new token requests. **needs your story:** how ownership works on your team now. | text post |
 | 2-21 | Charts in a simulation tool should show assumptions next to results. | Keeping inputs beside outputs in Equity Simulation lets people trace why a scenario looks the way it does. **needs your story:** confirm the shipped design does this. | screenshot plus text |
 | 2-22 | What I'd tell a designer in their first month on a fintech team. | Learn the model, spend time with the numbers, and ask what a wrong number costs the user. **needs your story:** what your own first month taught you. | carousel (7 slides) |
 | 2-23 | The question I ask before adding any step to a financial flow. | The test you apply before adding friction to a flow like the DCF. **needs your story:** the question you use. | text post |
@@ -81,7 +81,7 @@ Built 30 Oct 2026 from Prompt 5. Target role: Senior Product Designer. Target te
 | 3-1 ★ | Delayed market data is a design constraint you can build a feature around. | Artos's Market Watch had a 2% engagement baseline and data delayed by 15–30 minutes. You redesigned it as an insight surface that works with the delay instead of pretending to be live. | before/after image |
 | 3-2 | If a token name contains a colour, it's a component token in disguise. | Semantic names describe a role in the UI, which is the case for semantic-first systems. | screenshot plus text |
 | 3-3 | Dark mode is a quick test of whether your tokens are semantic. | If adding dark mode means editing components, the token layer is doing too little. | before/after image |
-| 3-4 | Most design systems have too many tokens. | Token sprawl grows from one-off requests. Fewer semantic tokens are easier to theme and audit, with 157 → 63 as your example. | text post |
+| 3-4 | Most design systems have too many tokens. | Token sprawl grows from one-off requests. Fewer semantic tokens are easier to theme and audit, with 157 → 64 as your example. | text post |
 | 3-5 | Product designers should be able to ship a small product on their own. | AI coding tools now let a designer take an idea to a store listing, as Notate shows, and that changes what "senior" can mean. | text post |
 | 3-6 | Designing with Claude Code changed what I put in Figma. | Which parts of Notate you designed in Figma, which went straight into code, and why. **needs your story:** the split, and one example of each. | screenshot plus text |
 | 3-7 | Financial explanations belong in the flow, where the decision happens. | Put plain-language explanation inline, like Artos's ELI5 explainers, at the point of decision. Definitions hidden in tooltips come too late. | before/after image |
@@ -138,7 +138,7 @@ Post on Monday, Wednesday and Friday. The schedule front-loads the ★ posts and
 
 | Week | Mon | Wed | Fri |
 |---|---|---|---|
-| 1 | 1-1 ★ Token rebuild, 157 → 63 (carousel) | 1-6 ★ Notate built with Claude Code (video) | 4-1 ★ Looking for a senior role in Bengaluru (carousel) |
+| 1 | 1-1 ★ Token rebuild, 157 → 64 (carousel) | 1-6 ★ Notate built with Claude Code (video) | 4-1 ★ Looking for a senior role in Bengaluru (carousel) |
 | 2 | 2-1 ★ DCF flow for private-equity workflows (carousel) | 3-1 ★ Designing around delayed market data (before/after) | 1-7 ★ Cutting a feature from Notate (before/after) |
 | 3 | 2-3 ★ Theming from 2–3 days to under an hour (before/after) | 1-13 ★ The Artos 30% drop-off (screenshot) | 2-2 ★ Equity Simulation (video) |
 | 4 | 2-4 ★ WCAG AA checked when each token is defined (carousel) | 4-2 Job search ICP for employers (carousel) | 3-19 AI suggestions in fintech need a visible "why" (carousel) |

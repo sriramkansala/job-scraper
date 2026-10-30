@@ -1,8 +1,8 @@
 # Single source of truth for Sriram's resume. Rebuild with ./resume/build.sh
 # RenderCV v2.8 schema: https://docs.rendercv.com
 #
-# Facts come only from profile/designer-profile.md, profile/01-profile-and-icp.md
-# and his previous resume. Do not add anything that is not in those sources.
+# Facts come only from profile/designer-profile.md, profile/01-profile-and-icp.md,
+# his previous resume and his portfolio (sriram-kansala-portfolio.vercel.app). Do not add anything that is not in those sources.
 #
 # Layout notes (ATS):
 # - Single column. Company, title, dates and location sit on one line, so text
@@ -14,17 +14,17 @@ cv:
   location: Bengaluru, Karnataka, India
   email: sriram.kansala@gmail.com
   phone: "+91 97816 98929"
-  website: https://sriramkansala.framer.ai/
+  website: https://sriram-kansala-portfolio.vercel.app/
   social_networks:
     - network: LinkedIn
       username: sriram-kansala-330203113
   sections:
     summary:
-      - "Designer with 5+ years across fintech, enterprise SaaS and consumer products. Specialises in design systems, data-heavy workflows and accessible (WCAG AA) interfaces, and designs and builds products independently (Notate, Artos)."
+      - "Product designer with 5+ years in enterprise SaaS and fintech. I build scalable design systems and component libraries, refine complex workflows, and craft motion with Rive, from pre-PRD exploration to production-ready handoff. I also ship my own products with AI (Notate, built with Claude Code)."
 
     experience:
       - company: Turinglabs
-        # TITLE: confirm with Sriram (LinkedIn: Product Designer; old resume: Senior Product Designer)
+        # Title from his portfolio's About page (2026-10-30): "Product designer, 2023 to now".
         position: Product Designer
         start_date: 2023-02
         end_date: present
@@ -32,10 +32,11 @@ cv:
         highlights:
           - Redesigned the core DCF (discounted cash flow) flow into a guided experience for private-equity workflows.
           - Designed the Equity Simulation feature, letting investors stress-test scenarios before making investment decisions.
-          - "Rebuilt the design token architecture as a three-tier semantic model: 157 component tokens reduced to 63 semantic tokens, cutting the token payload 73% (137KB to 37KB)."
-          - Cut client theming time from 2–3 days to under an hour, with WCAG AA contrast validated at token definition.
+          - "Rearchitected the colour-token layer of a multi-brand enterprise SaaS platform: 157 component-scoped tokens became 64 semantic tokens in three tiers (59% fewer). Designed the model, the naming grammar, the accessibility pairing rules and the migration plan."
+          - Cut theming a new client from 2–3 days of manual remapping to a validated pipeline step under an hour; WCAG AA contrast is checked when a token is defined, and token files shrank from 137KB to 37KB.
+          - Rolled it out over three months alongside production work (documentation first, then deprecation warnings, then errors), with a gated request process for new tokens.
 
-      # LinkedIn shows Aug 2021 – May 2023 for L&T (overlaps Turinglabs). These are the old resume's dates.
+      # Portfolio says L&T 2021–2023 and LinkedIn Aug 2021 – May 2023 (overlaps Turinglabs). These are the old resume's dates.
       # "(LTIMindtree)" is left out: the font kerns "LT" so that text extraction reads "L TIMindtree".
       - company: Larsen & Toubro Infotech
         position: UX / Product Designer
@@ -45,43 +46,50 @@ cv:
         highlights:
           - Redesigned enterprise analytics dashboards and internal tools for manufacturing and infrastructure clients.
           - Rebuilt data-heavy reporting interfaces to surface critical information faster.
-          - Standardised UI patterns across modules and authored shared component specifications.
+          - Standardised UI patterns across modules and authored shared component specifications and redlines that developers could build from.
 
-      # LinkedIn shows Sep 2019 – Sep 2020 for Camberry (portfolio site says 2019 – 2021). These are the old resume's dates.
+      # From the portfolio's About page; no details on what the work was, so no bullets.
+      - company: Studo Sorted
+        position: Design Consultant
+        start_date: 2021
+        end_date: 2022
+
+      # Portfolio says Camberry 2019–2021 and LinkedIn Sep 2019 – Sep 2020. These are the old resume's dates.
       - company: Camberry Studio
         position: Motion Designer
         start_date: 2019-08
         end_date: 2020-07
         location: Karnataka, India
         highlights:
-          - Motion design and animation for ed-tech, real estate and consumer product clients.
-          - Produced explainer videos and UI animations; established style guides and motion principles.
+          - Motion design, explainer videos and UI animation for ed-tech, real estate and consumer product clients; established style guides and motion principles.
 
     projects:
       - name: Notate, Chrome extension
         date: 2026
         highlights:
-          - Designed and built with Claude Code; live on the Chrome Web Store at v1.1.3.
-          - Element and region capture, screen recording and 60-second DOM replay, with push to Jira, Linear, GitLab and Trello.
+          - Made every product call and designed every surface; built it solo by directing Claude Code. First Chrome Web Store submission four weeks in; now live at v1.1.5.
+          - Turns any page (localhost, staging, internal tools) into a Jira, Linear, GitLab or Trello ticket with element or area capture, screen recording with on-page drawing, a 60-second DOM replay, and a context file written for coding agents.
       - name: Artos, personal finance app (independent)
         start_date: 2019
         end_date: present
         highlights:
-          - Led end-to-end design in partnership with a developer for an Android investment and expense tracker (10k+ downloads, 3.6★, ~1,500 DAU).
-          - Shipped a full app redesign, ELI5 financial explainers and the core user flows.
-          - The redesign initially caused a 30% user drop-off; diagnosed the causes through research and analytics, and now iterating on fixes.
+          - Product designer for an Android investment and expense tracker (10k+ downloads, ~1,500 DAU), partnering with its developer.
+          - Reframed Market Watch, used by only 2% of daily users, from a delayed price ticker into an insight surface; benchmarked Zerodha, Groww, Upstox and Robinhood and built a signal-card structure around how investors scan (what's moving, is it real, is there an opportunity).
+          - Shipped a full app redesign and ELI5 financial explainers; the redesign initially caused a 30% user drop-off, which I diagnosed through research and analytics and am iterating on.
+      - name: UI interactions (Artos, Taralipi)
+        date: Ongoing
+        highlights:
+          - Interaction and motion studies for products I build, such as spring-driven text selection, rotatable 3D chart columns and rings, and collaborator stacks that make room on hover.
 
     skills:
       - label: Product design
-        details: UX, UI, interaction design, information architecture, wireframing, prototyping, user research, usability testing, accessibility (WCAG AA), responsive design
+        details: UX, UI, interaction and motion design, information architecture, wireframing, prototyping, user research, usability testing, accessibility (WCAG AA), cross-functional collaboration
       - label: Design systems
         details: Component libraries, design tokens, semantic token architecture, theming, style guides, pattern libraries, cross-platform consistency
       - label: Domains
         details: Fintech, private equity, financial modelling (DCF, equity simulation), enterprise SaaS, analytics dashboards, consumer mobile apps
       - label: Tools
         details: Figma, Framer, ProtoPie, Rive, Sketch, InVision, Zeplin, Adobe Photoshop, Illustrator, After Effects, Claude Code
-      - label: Other
-        details: Motion design, animation, stakeholder communication, cross-functional collaboration, Agile/Scrum
       - label: Languages
         details: Telugu (native), Tamil, Hindi, English
 

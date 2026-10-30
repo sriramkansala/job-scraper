@@ -25,7 +25,7 @@ Number of the 30 target job descriptions that ask for each thing:
 ## Gaps, most important first
 
 1. **Notate and AI-assisted building are invisible.** 23 of 30 postings ask about AI, and 15 about code. Notate is your proof of both, and it's on no profile section.
-2. **Your experience entries have no descriptions.** Turinglabs, L&T, Mountain Studio and Camberry show only a title and dates. Recruiters search experience text, and your token numbers (157 → 63, 137KB → 37KB, theming from 2–3 days to under an hour) appear nowhere on LinkedIn.
+2. **Your experience entries have no descriptions.** Turinglabs, L&T, Mountain Studio and Camberry show only a title and dates. Recruiters search experience text, and your token numbers (157 → 64, 137KB → 37KB, theming from 2–3 days to under an hour) appear nowhere on LinkedIn.
 3. **Your skills section works against you.** Your top skills are Graphic Design, Presentation Skills and Leadership, followed by CATIA, Customer Service, Microsoft Office, Online Advertising and Social Media. None of the target roles ask for these. LinkedIn's matching uses this list.
 4. **Your title and dates contradict each other.** These are the facts a background check confirms with HR:
    - **Turinglabs:** LinkedIn says Product Designer, while your About and resume say Senior Product Designer.
@@ -50,21 +50,21 @@ Pick the version that matches your official title:
 
 > I'm a product designer in Bengaluru with 5+ years designing fintech and enterprise B2B products, and a background in motion design. I do my best work where products are dense with data, and where the design system has to hold up in code rather than only in Figma.
 >
-> At Turinglabs I rebuilt our colour-token architecture from scratch: 157 component tokens became 63 semantic ones. The token payload dropped from 137KB to 37KB, client theming went from 2–3 days to under an hour, and WCAG AA contrast is checked when a token is defined, not audited afterwards. I also redesigned the core DCF flow into a guided experience for private-equity workflows, and designed Equity Simulation for stress-testing scenarios before an investment decision.
+> At Turinglabs I rebuilt our colour-token architecture from scratch: 157 component tokens became 64 semantic ones. The token payload dropped from 137KB to 37KB, client theming went from 2–3 days to under an hour, and WCAG AA contrast is checked when a token is defined, not audited afterwards. I also redesigned the core DCF flow into a guided experience for private-equity workflows, and designed Equity Simulation for stress-testing scenarios before an investment decision.
 >
 > I prototype and ship with AI tools. Notate, a Chrome extension for capturing and reporting UI issues, is one I designed and built with Claude Code. It's live on the Chrome Web Store with Jira, Linear, GitLab and Trello integrations. On Artos, a personal-finance app with 10k+ downloads, I learned the hard way that a redesign can cost retention, and how to diagnose it.
 >
 > What I bring: design systems and tokens built for engineering handoff · accessibility built into the system · complex financial and analytics workflows made usable · AI-assisted prototyping in code · motion and interaction craft (Rive, Framer).
 >
 > Open to senior product design roles in Bengaluru (hybrid or on-site) or remote, in fintech, AI products, dev tools and B2B SaaS.
-> Portfolio: sriramkansala.framer.ai
+> Portfolio: sriram-kansala-portfolio.vercel.app
 
 Every fact here comes from `job-scraper/profile/`. If you'd rather not mention the Artos retention drop, delete that sentence.
 
 ## Experience descriptions
 
 **Turinglabs** (use your official title):
-- Rebuilt the colour-token architecture: 157 component tokens → 63 semantic tokens, payload 137KB → 37KB, client theming from 2–3 days to under an hour.
+- Rebuilt the colour-token architecture: 157 component tokens → 64 semantic tokens, payload 137KB → 37KB, client theming from 2–3 days to under an hour.
 - Designed a three-tier semantic token model with WCAG AA validated when a token is defined.
 - Redesigned the core DCF flow into a guided experience for private-equity workflows.
 - Designed Equity Simulation, for stress-testing scenarios before an investment decision.

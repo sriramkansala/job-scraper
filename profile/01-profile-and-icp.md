@@ -18,14 +18,14 @@ Built 2 Oct 2026. Sources: the portfolio site source (`Sriram Website/website-3.
 | Languages | Telugu (native), Tamil, Hindi, English | resume |
 | LinkedIn headline | Senior Product Designer · Fintech, Private Equity & Enterprise SaaS · Design Systems · Figma · Framer · WCAG AA · Open to Remote (Global) | LinkedIn |
 | Stated preference | Senior Product Designer roles, fully remote, globally available; fintech, SaaS, data-heavy products | LinkedIn summary |
-| Portfolio | sriramkansala.framer.ai (live), website-3.0 (in progress) | resume, repo |
+| Portfolio | sriram-kansala-portfolio.vercel.app (live), website-3.0 (in progress) | resume, repo |
 | LinkedIn | linkedin.com/in/sriram-kansala-330203113 | LinkedIn |
 
 ### Experience
 
 | Period | Company | Title | What you did |
 |---|---|---|---|
-| Feb 2023 – now | Turinglabs | Product Designer | Redesigned the core DCF flow into a guided experience for private-equity workflows. Designed Equity Simulation (scenario stress-testing). Rebuilt the colour-token architecture: 157 → 63 tokens, 137KB → 37KB, client theming from 2–3 days to under an hour, WCAG AA validated at definition time. |
+| Feb 2023 – now | Turinglabs | Product Designer | Redesigned the core DCF flow into a guided experience for private-equity workflows. Designed Equity Simulation (scenario stress-testing). Rebuilt the colour-token architecture: 157 → 64 tokens, 137KB → 37KB, client theming from 2–3 days to under an hour, WCAG AA validated at definition time. |
 | Aug 2021 – Dec 2022 | Larsen & Toubro Infotech | UX / Product Designer | Enterprise analytics dashboards and internal tools for manufacturing and infrastructure clients. Standardised UI patterns across modules. Specs and redlines. |
 | 2021 – 2022 | Studo Sorted | Design consultant | Listed on the site only; no detail anywhere. |
 | Mar 2021 – Jun 2021 | Mountain Studio | Jr Product Designer | Listed on LinkedIn only; no detail. |

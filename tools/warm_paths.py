@@ -53,7 +53,7 @@ def role_of(c: dict) -> str:
     return "peer"
 
 TEMPLATES = {
-    "design lead": "Hi {first}, I saw {company} is hiring a {role}. I rebuilt our token system at Turinglabs (157 → 63 semantic tokens, theming from days to under an hour) and I've applied. Would you be open to a 10-minute chat about what the team needs?",
+    "design lead": "Hi {first}, I saw {company} is hiring a {role}. I rebuilt our token system at Turinglabs (157 → 64 semantic tokens, theming from days to under an hour) and I've applied. Would you be open to a 10-minute chat about what the team needs?",
     "designer / product": "Hi {first}, I'm applying for the {role} role at {company}. As someone on the team, what does the design work look like day to day? And if it seems like a fit, would you be comfortable referring me?",
     "recruiter": "Hi {first}, I've applied for the {role} role at {company} (design systems, fintech and AI-assisted prototyping). Happy to share anything that helps you screen. Is the role still open?",
     "leader": "Hi {first}, I'm applying for the {role} role at {company}. Could you point me to the person who owns design hiring, or pass my name along?",
