@@ -107,6 +107,12 @@ Never edit an older dated file.
   - If the posting has closed and the issue is still Shortlisted or Ready, move it to Canceled with a comment saying the posting is gone.
   - Never change an issue at stage Applied or later. Those belong to the user and the nightly email check.
 
+## Filling applications (hard rule)
+
+- **Where:** open every application in the **Claude built-in browser pane**, with **one tab per application**. Never use the Claude in Chrome extension for this. It runs in his Dia browser, which he can't see while Claude is full-screen.
+- **Fill:** everything except the resume. The pane can't attach files, so tell him to click Attach and pick `resume/Damotharan-Sriram-Product-Designer.pdf`.
+- **Submit:** he presses Submit himself.
+
 ## Tracking applications
 
 The tracker uses stage labels on the Free plan's Life team. README.md has the stage table.
