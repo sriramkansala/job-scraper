@@ -1,0 +1,178 @@
+# Single source of truth for Sriram's resume. Rebuild with ./resume/build.sh
+# RenderCV v2.8 schema: https://docs.rendercv.com
+#
+# Facts come only from profile/designer-profile.md, profile/01-profile-and-icp.md,
+# his previous resume and his portfolio (sriram-kansala-portfolio.vercel.app). Do not add anything that is not in those sources.
+#
+# Layout notes (ATS):
+# - Single column. Company, title, dates and location sit on one line, so text
+#   extraction keeps them together and in reading order.
+# - Year-only dates are written as bare integers (2014, not "2014"). A quoted
+#   year is parsed as a date and rendered as "Jan 2014", which invents a month.
+cv:
+  name: Damotharan Sriram
+  location: Bengaluru, Karnataka, India
+  email: sriram.kansala@gmail.com
+  phone: "+91 97816 98929"
+  website: https://sriram-kansala-portfolio.vercel.app/
+  social_networks:
+    - network: LinkedIn
+      username: sriram-kansala-330203113
+  sections:
+    summary:
+      - "Product designer with 5+ years in enterprise SaaS and fintech. I build scalable design systems and component libraries, refine complex workflows, and craft motion with Rive, from pre-PRD exploration to production-ready handoff. I also ship my own products with AI (Notate, built with Claude Code)."
+
+    experience:
+      - company: Turinglabs
+        # Title from his portfolio's About page (2026-10-30): "Product designer, 2023 to now".
+        position: Product Designer
+        start_date: 2023-02
+        end_date: present
+        location: Karnataka, India
+        highlights:
+          - Redesigned the core DCF (discounted cash flow) flow into a guided experience for private-equity workflows.
+          - Designed the Equity Simulation feature, letting investors stress-test scenarios before making investment decisions.
+          - "Rearchitected the colour-token layer of a multi-brand enterprise SaaS platform: 157 component-scoped tokens became 64 semantic tokens in three tiers (59% fewer). Designed the model, the naming grammar, the accessibility pairing rules and the migration plan."
+          - Cut theming a new client from 2–3 days of manual remapping to a validated pipeline step under an hour; WCAG AA contrast is checked when a token is defined, and token files shrank from 137KB to 37KB.
+          - Rolled it out over three months alongside production work (documentation first, then deprecation warnings, then errors), with a gated request process for new tokens.
+
+      # Portfolio says L&T 2021–2023 and LinkedIn Aug 2021 – May 2023 (overlaps Turinglabs). These are the old resume's dates.
+      # "(LTIMindtree)" is left out: the font kerns "LT" so that text extraction reads "L TIMindtree".
+      - company: Larsen & Toubro Infotech
+        position: UX / Product Designer
+        start_date: 2021-08
+        end_date: 2022-12
+        location: Karnataka, India
+        highlights:
+          - Redesigned enterprise analytics dashboards and internal tools for manufacturing and infrastructure clients.
+          - Rebuilt data-heavy reporting interfaces to surface critical information faster.
+          - Standardised UI patterns across modules and authored shared component specifications and redlines that developers could build from.
+
+      # From the portfolio's About page; no details on what the work was, so no bullets.
+      - company: Studo Sorted
+        position: Design Consultant
+        start_date: 2021
+        end_date: 2022
+
+      # Portfolio says Camberry 2019–2021 and LinkedIn Sep 2019 – Sep 2020. These are the old resume's dates.
+      - company: Camberry Studio
+        position: Motion Designer
+        start_date: 2019-08
+        end_date: 2020-07
+        location: Karnataka, India
+        highlights:
+          - Motion design, explainer videos and UI animation for ed-tech, real estate and consumer product clients; established style guides and motion principles.
+
+    projects:
+      - name: Notate, Chrome extension
+        date: 2026
+        highlights:
+          - Made every product call and designed every surface; built it solo by directing Claude Code. First Chrome Web Store submission four weeks in; now live at v1.1.5.
+          - Turns any page (localhost, staging, internal tools) into a Jira, Linear, GitLab or Trello ticket with element or area capture, screen recording with on-page drawing, a 60-second DOM replay, and a context file written for coding agents.
+      - name: Artos, personal finance app (independent)
+        start_date: 2019
+        end_date: present
+        highlights:
+          - Product designer for an Android investment and expense tracker (10k+ downloads, ~1,500 DAU), partnering with its developer.
+          - Reframed Market Watch, used by only 2% of daily users, from a delayed price ticker into an insight surface; benchmarked Zerodha, Groww, Upstox and Robinhood and built a signal-card structure around how investors scan (what's moving, is it real, is there an opportunity).
+          - Shipped a full app redesign and ELI5 financial explainers; the redesign initially caused a 30% user drop-off, which I diagnosed through research and analytics and am iterating on.
+      - name: UI interactions (Artos, Taralipi)
+        date: Ongoing
+        highlights:
+          - Interaction and motion studies for products I build, such as spring-driven text selection, rotatable 3D chart columns and rings, and collaborator stacks that make room on hover.
+
+    skills:
+      - label: Product design
+        details: UX, UI, interaction and motion design, information architecture, wireframing, prototyping, user research, usability testing, accessibility (WCAG AA), cross-functional collaboration
+      - label: Design systems
+        details: Component libraries, design tokens, semantic token architecture, theming, style guides, pattern libraries, cross-platform consistency
+      - label: Domains
+        details: Fintech, private equity, financial modelling (DCF, equity simulation), enterprise SaaS, analytics dashboards, consumer mobile apps
+      - label: Tools
+        details: Figma, Framer, ProtoPie, Rive, Sketch, InVision, Zeplin, Adobe Photoshop, Illustrator, After Effects, Claude Code
+      - label: Languages
+        details: Telugu (native), Tamil, Hindi, English
+
+    education:
+      - institution: Lovely Professional University
+        area: Mechanical Engineering (Honors)
+        degree: Bachelor of Technology,
+        start_date: 2014
+        end_date: 2018
+        location: Punjab, India
+      - institution: Sri Chaitanya Junior College
+        area: Higher Secondary (Math, Physics, Chemistry)
+        start_date: 2012
+        end_date: 2014
+        location: Andhra Pradesh, India
+
+design:
+  theme: classic
+  page:
+    size: a4
+    top_margin: 0.45in
+    bottom_margin: 0.45in
+    left_margin: 0.55in
+    right_margin: 0.55in
+    show_footer: false
+    show_top_note: false
+  typography:
+    alignment: left
+    line_spacing: 0.5em
+    font_size:
+      body: 10pt
+      name: 22pt
+      section_titles: 1.25em
+  header:
+    space_below_name: 0.3cm
+    space_below_headline: 0cm
+    space_below_connections: 0.2cm
+    connections:
+      phone_number_format: international
+      show_icons: false
+      display_urls_instead_of_usernames: true
+      separator: "|"
+      space_between_connections: 0.25cm
+  section_titles:
+    type: with_full_line
+    space_above: 0.3cm
+    space_below: 0.15cm
+  sections:
+    space_between_regular_entries: 0.6em
+    show_time_spans_in: []
+  entries:
+    date_and_location_width: 0cm
+    space_between_columns: 0cm
+    side_space: 0cm
+    degree_width: 0cm
+  templates:
+    experience_entry:
+      main_column: |-
+        **COMPANY** | POSITION | DATE | LOCATION
+        HIGHLIGHTS
+      date_and_location_column: ""
+    normal_entry:
+      main_column: |-
+        **NAME** | DATE
+        HIGHLIGHTS
+      date_and_location_column: ""
+    education_entry:
+      main_column: "**INSTITUTION** | DEGREE AREA | DATE | LOCATION"
+      degree_column: null
+      date_and_location_column: ""
+
+locale:
+  language: english
+  present: Present
+  # Standard three-letter months so ATS date parsers read every date as "Mon YYYY".
+  month_abbreviations: [Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec]
+
+settings:
+  current_date: today
+  pdf_title: Damotharan Sriram - Resume
+  render_command:
+    output_folder: rendercv_output
+    pdf_path: Damotharan-Sriram-Product-Designer.pdf
+    dont_generate_markdown: true
+    dont_generate_html: true
+    dont_generate_png: true
