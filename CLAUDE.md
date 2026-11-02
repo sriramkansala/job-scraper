@@ -110,7 +110,10 @@ Never edit an older dated file.
 ## Filling applications (hard rule)
 
 - **Where:** open every application in the **Claude built-in browser pane**, with **one tab per application**. Never use the Claude in Chrome extension for this. It runs in his Dia browser, which he can't see while Claude is full-screen.
-- **Fill:** everything except the resume. The pane can't attach files, so tell him to click Attach and pick `resume/Damotharan-Sriram-Product-Designer.pdf`.
+- **Fill:** everything, including the resume.
+  - **To attach it:** in the page, fetch `https://raw.githubusercontent.com/sriramkansala/job-scraper/main/resume/Damotharan-Sriram-Product-Designer.pdf`, wrap it in a `File`, set it on the form's `input[type=file]` through a `DataTransfer`, and dispatch `change`.
+  - **Before attaching:** push any rebuilt resume first, so raw GitHub serves the current version.
+  - **If a form rejects it:** ask him to click Attach.
 - **Submit:** he presses Submit himself.
 
 ## Tracking applications
